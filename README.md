@@ -2,4 +2,4 @@
 <br>
 
 ## 📒Spring
-- [PostgreSQL Notify&Listen]() <br>
+- [PostgreSQL Notify&Listen](https://github.com/DuHyeon2/DailyStudy/blob/main/Spring/PostgreSQLNotifyListen.md) <br>
