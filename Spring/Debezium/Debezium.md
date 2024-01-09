@@ -109,7 +109,7 @@ SHOW wal_level;
 ```
 ![image](https://github.com/DuHyeon2/DailyStudy/assets/83499405/a7451684-60cc-4886-a8c4-872bbec8b2b5)
 
-- wal_level은 WAL에 기록되는 정보의 양을 결정하는데, replica와 logical, minimal 이 있다. <br>
+- wal_level은 PostgreSQL에서 WAL에 기록되는 정보의 양을 결정하는데, replica와 logical, minimal 이 있다. <br>
 - **replica**는 물리적 디코딩을 지원하는 데 필요한 정보만 제공 <br>
 - **logical**은 논리적 디코딩을 지원하는 데 필요한 정보를 추가 <br>
 - **minimal**은 복구하기위해 필요한 정보만 기록 <br>
