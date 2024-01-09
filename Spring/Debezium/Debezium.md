@@ -30,6 +30,7 @@ CDC란 Change Data Capture의 약자로 변경된 내용을 골라내는 패턴�
 </dependency>
 ```
 - Spring 버전에 맞게 설정(본인은 Spring 4.3.30.RELEASE)
+- DB는 PostgreSQL 11
 
 ## 3. 구현하기
 ```
