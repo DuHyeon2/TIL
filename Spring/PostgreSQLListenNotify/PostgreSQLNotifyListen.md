@@ -1,3 +1,6 @@
+![postgresql](https://github.com/DuHyeon2/DailyStudy/assets/83499405/d91850b3-dae2-4b4f-9876-838d4369dd7d)
+
+
 # PostgreSQL의 비동기 작업
 spring에서 실시간 알람 기능을 구현하던 도중 DB에 새로운 값이 들어오는걸 실시간으로 감지를 해야했다. <br>
 찾던 도중 PostgreSQL의 Trigger를 기반으로 한 Listen & Notify라는게 있다는걸 알았다.
