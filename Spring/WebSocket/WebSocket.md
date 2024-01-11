@@ -100,7 +100,7 @@ public class WebSocketHandler extends TextWebSocketHandler {
 - session에 websocket에 연결된 클라이언트 정보를 담고, 연결이 끊길때마다 session을 제거한다.
 - **sendMessage**로 해당 session의 클라이언트에게 메시지를 보낸다.
 
-## 3.클라이언트 설정
+## 3. 클라이언트 설정
 ```
 $(document).ready(function() {
     /* webSocket */
@@ -134,7 +134,7 @@ $(document).ready(function() {
 - **onerror** : 웹소켓 연결이 에러가 발생할때 실행
 - 메시지를 서버로 보내고 싶으면 **websock.send("메시지")** 를 이용하면 된다.
 
-## 4.Apache 설정
+## 4. Apache 설정
 ```
 <VirtualHost *:443>
         ...
