@@ -151,5 +151,5 @@ $(document).ready(function() {
         ...
 </VirtualHost>
 ```
-- apache ssl 이 설정되어 있을땐 proxy 서버 설정을 해 주어야 한다
+- apache ssl 이 설정되어 있을땐 ssl 설정 conf에 proxy 서버 설정을 해 주어야 한다
 - **(이부분은 추후 업데이트 예정)**
