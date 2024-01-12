@@ -16,4 +16,5 @@
 - [CORS](https://github.com/DuHyeon2/DailyStudy/blob/main/SecurityVulnerability/CORS.md) <br>
 
 ## 📃기술면접
-- [백엔드](https://github.com/DuHyeon2/TIL/blob/main/TechnicalInterview/BackEnd/OOP(%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D))
+- [백엔드](https://github.com/DuHyeon2/TIL/blob/main/TechnicalInterview/BackEnd)
+  - [OOP(객체지향프로그래밍)](https://github.com/DuHyeon2/TIL/blob/main/TechnicalInterview/BackEnd/OOP(%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D))
