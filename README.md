@@ -10,4 +10,4 @@
 - [Debezium](https://github.com/DuHyeon2/DailyStudy/blob/main/Spring/Debezium/Debezium.md) <br>
 - [WebSocket](https://github.com/DuHyeon2/DailyStudy/blob/main/Spring/WebSocket/WebSocket.md) <br>
 
-## 보안취약점
+## 💻보안취약점
