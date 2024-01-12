@@ -11,3 +11,4 @@
 - [WebSocket](https://github.com/DuHyeon2/DailyStudy/blob/main/Spring/WebSocket/WebSocket.md) <br>
 
 ## 💻보안취약점
+- [CORS](https://github.com/DuHyeon2/DailyStudy/blob/main/SecurityVulnerability/CORS.md) <br>
