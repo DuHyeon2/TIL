@@ -9,6 +9,8 @@
 - [PostgreSQL Notify&Listen](https://github.com/DuHyeon2/DailyStudy/blob/main/Spring/PostgreSQLListenNotify/PostgreSQLNotifyListen.md) <br>
 - [Debezium](https://github.com/DuHyeon2/DailyStudy/blob/main/Spring/Debezium/Debezium.md) <br>
 - [WebSocket](https://github.com/DuHyeon2/DailyStudy/blob/main/Spring/WebSocket/WebSocket.md) <br>
+- [SpringSecurity](https://github.com/DuHyeon2/DailyStudy/blob/main/Spring/SpringSecurity) <br>
+
 
 ## 💻보안취약점
 - [CORS](https://github.com/DuHyeon2/DailyStudy/blob/main/SecurityVulnerability/CORS.md) <br>
