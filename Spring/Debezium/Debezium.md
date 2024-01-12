@@ -49,25 +49,25 @@ public class DebeziumConfig {
     private static final Logger LOGGER = LoggerFactory.getLogger(DebeziumConfig.class);
 
 
-    @Value("#{globalInfo['Globals.postgresqlFlood.url']}")
+    @Value("#{globalInfo['Globals.postgresql.url']}")
     private String url;
 
-    @Value("#{globalInfo['Globals.postgresqlFlood.username']}")
+    @Value("#{globalInfo['Globals.postgresql.username']}")
     private String username;
 
-    @Value("#{globalInfo['Globals.postgresqlFlood.password']}")
+    @Value("#{globalInfo['Globals.postgresql.password']}")
     private String password;
 
-    @Value("#{globalInfo['Globals.postgresqlFlood.dburl']}")
+    @Value("#{globalInfo['Globals.postgresql.dburl']}")
     private String dburl;
 
-    @Value("#{globalInfo['Globals.postgresqlFlood.port']}")
+    @Value("#{globalInfo['Globals.postgresql.port']}")
     private String port;
 
-    @Value("#{globalInfo['Globals.postgresqlFlood.host']}")
+    @Value("#{globalInfo['Globals.postgresql.host']}")
     private String host;
 
-    @Value("#{globalInfo['Globals.postgresqlFlood.dbname']}")
+    @Value("#{globalInfo['Globals.postgresql.dbname']}")
     private String dbname;
 
 
