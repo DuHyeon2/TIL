@@ -14,3 +14,6 @@
 
 ## 💻보안취약점
 - [CORS](https://github.com/DuHyeon2/DailyStudy/blob/main/SecurityVulnerability/CORS.md) <br>
+
+## 📃기술면접
+- [백엔드]()
