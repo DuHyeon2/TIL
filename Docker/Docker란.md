@@ -1,4 +1,4 @@
-![Alt text](image.png)
+![alt text](<img/도커 기본이미지.png>)
 
 # Docker사용이유?
 - 프로그램을 다운받는 과정을 간단하게 하기 위해
