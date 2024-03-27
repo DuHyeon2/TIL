@@ -11,8 +11,6 @@
 - [SpringSecurity](https://github.com/DuHyeon2/DailyStudy/blob/main/Spring/SpringSecurity)
   - [SpringSecurity설정](https://github.com/DuHyeon2/TIL/blob/main/Spring/SpringSecurity/Security%EC%84%A4%EC%A0%95.md)
 
-
-
 ## 💻보안취약점
 - [CORS](https://github.com/DuHyeon2/DailyStudy/blob/main/SecurityVulnerability/CORS.md) <br>
 
