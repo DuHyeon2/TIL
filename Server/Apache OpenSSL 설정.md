@@ -24,7 +24,8 @@
     # openssl genrsa -des3 -out server.key 2048
     ```
     - 이후 비밀번호를 입력
-    ![alt text](<img/개인키 생성.png>)
+
+        ![alt text](<img/개인키 생성.png>)
 
 - 인증요청서 생성
     ```
@@ -56,7 +57,8 @@
     ```
     - 개인 정보를 입력하면 된다(로컬로 진행할거라 아무거나 입력함)
     - 마지막에 비밀번호 입력란은 아무것도 입력하지 말고 엔터 두번 입력
-    ![alt text](<img/인증요청서 생성.png>)
+
+        ![alt text](<img/인증요청서 생성.png>)
 
 - 개인키 패스워드 제거
     ```
@@ -67,14 +69,16 @@
     Enter pass phrase for server.key.origin: 개인 키 패스워드 입력
     ```
     - 아파치 구동시마다 물어보므로 패스워드는 제거
-    ![alt text](<img/개인키 패스워드 제거.png>)
+    
+        ![alt text](<img/개인키 패스워드 제거.png>)
 
 - 인증서 생성
     ```
     # openssl x509 -req -days 3650 -in server.csr -signkey server.key -out server.crt
     ```
     - 위에서 만든 개인키와 요청서를 통해 3650일짜리 인증서 생성
-    ![alt text](<img/개인키 패스워드 제거.png>)
+
+        ![alt text](<img/개인키 패스워드 제거.png>)
 
 ## 4. ssl.conf 수정 혹은 httpd-ssl.conf 생성
 - 아마 ssl.conf가 있을탠데 난 그냥 httpd-ssl을 새로 만들어 주었다.
@@ -128,4 +132,5 @@
 
 ## 6. 실행결과
 - 이후 아파치 재실행시 https로 접근되는걸 볼 수 있다.
-![alt text](<img/OpenSSL 결과.png>)
+
+    ![alt text](<img/OpenSSL 결과.png>)
