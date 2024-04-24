@@ -3,7 +3,8 @@
 - SSL인증서 설치 등 SSL 관련 작업을 수행할수 있게 해주는 암호화 라이브러리
 
 ## 1. OpenSSL 설치
-- openssl 의 버전을 확인하고 없다면 설치를 한다.
+- openssl 의 버전을 확인하고 없다면 설치를 한다. 
+
     ```
     # openssl version
 
@@ -11,15 +12,16 @@
     ```
 
 ## 2. mod_ssl 설치
-- mod_ssl도 설치해준다.
+- mod_ssl도 설치해준다. 
     ```
     # sudo yum install mod_ssl
     ```
+    
 - /etc/httpd/modules 디렉토리에 mod_ssl.so 가 생성된다.
 
 
 ## 3. 인증서 생성
-- 개인키 생성 
+1. 개인키 생성 
     ```
     # openssl genrsa -des3 -out server.key 2048
     ```
@@ -27,7 +29,7 @@
 
         ![alt text](<img/개인키 생성.png>)
 
-- 인증요청서 생성
+2. 인증요청서 생성
     ```
     # openssl req -new -key server.key -out server.csr
 
@@ -60,7 +62,7 @@
 
         ![alt text](<img/인증요청서 생성.png>)
 
-- 개인키 패스워드 제거
+3. 개인키 패스워드 제거
     ```
     # cp server.key server.key.origin
 
@@ -72,7 +74,7 @@
     
         ![alt text](<img/개인키 패스워드 제거.png>)
 
-- 인증서 생성
+4. 인증서 생성
     ```
     # openssl x509 -req -days 3650 -in server.csr -signkey server.key -out server.crt
     ```
