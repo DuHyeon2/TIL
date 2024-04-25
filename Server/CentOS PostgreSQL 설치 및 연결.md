@@ -5,19 +5,21 @@
 - 무료 오픈소스 소프트웨어이다.
 
 ## 1. PostgreSQL 설치
-1. PostgreSQL 설치가 가능한 버전 확인
+1. ### PostgreSQL 설치가 가능한 버전 확인
     ```
     # sudo yum module list postgresql
     ```
 
-2. Repo 추가
+ 2. ### 레포지토리 추가
+
     ```
     # wget https://download.postgresql.org/pub/repos/yum/common/redhat/rhel-8.9-x86_64/pgdg-redhat-repo-42.0-38PGDG.noarch.rpm
 
     # yum localinstall pgdg-redhat-repo-42.0-38PGDG.noarch.rpm
     ```
+    - 레포지토리는 일반 시스템 및 패치 관리를 지원해주며 PostgreSQL 버전에 자동 업데이트를 지원해준다.
 
-3. PostgreSQL14 설치
+3. ### PostgreSQL14 설치
     ```
     # sudo yum install postgresql14 postgresql14-server -y
     ```
@@ -25,12 +27,12 @@
 - 위 단계를 따르면 postgreSQL14 가 설치된다.
 
 ## 2. 외부 접속을 위한 DB 설정
-1. DB 초기화
+1. ### DB 초기화
     ```
     # sudo /usr/pgsql-14/bin/postgresql-14-setup initdb
     ```
 
-2. DB 시작 및 기동 시 시작 설정 
+2. ### DB 시작 및 기동 시 시작 설정 
     ```
     # systemctl start postgresql-14
     
@@ -44,7 +46,7 @@
     - 이후 다시 DB를 종료하자
 
 
-3. 패스워드 초기화
+3. ### 패스워드 초기화
     - pg_hba.conf를 수정 해 주기위해 find 로 찾는다.
         ```
         # find / -name pg_hba.conf
@@ -86,7 +88,7 @@
 
     - 이후 DB를 재실행 해 주면 된다.
 
-4. DB 외부 접속 설정
+4. ### DB 외부 접속 설정
     - pg_hba.conf에 외부 설정을 해준다.
         ```
         # cd [pg_hba.conf 경로]
@@ -118,4 +120,31 @@
         
         # firewall-cmd --reload
         ```
+        
         ![alt text](img/postgre7.png)
+
+## 3. PostgreSQL 라이브러리
+1. ### PostGIS 설치
+    - 설치 가능한 PostGI를 우선 확인한다.
+
+        ```
+        # yum list postgis*
+        ``` 
+
+    - EPEL 레포지토리를 설치한다.
+        ```
+        # yum install epel-release
+        ```
+
+    - 자신의 PostgreSQL 버전에 맞는 PostGIS 를 설치한다.
+    - 본인은 14버전임으로 postgisXX_14 를 설치했다
+        ```
+        # yum install postgis32_14 
+        ```
+
+    - 만약 설치할 때 <b>"from pgdg14 requires gdal38-libs >= 3.8.4, but none of the providers can be installed" </b>이란 에러가 발생시 아래 명령어로 CRB 저장소를 활성화하자
+
+        ```
+        # dnf config-manager --enable crb
+        ```
+

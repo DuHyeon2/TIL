@@ -21,7 +21,7 @@
 
 
 ## 3. 인증서 생성
-1. 개인키 생성 
+1. ### 개인키 생성 
     ```
     # openssl genrsa -des3 -out server.key 2048
     ```
@@ -29,7 +29,7 @@
 
         ![alt text](<img/개인키 생성.png>)
 
-2. 인증요청서 생성
+2. ### 인증요청서 생성
     ```
     # openssl req -new -key server.key -out server.csr
 
@@ -62,7 +62,7 @@
 
         ![alt text](<img/인증요청서 생성.png>)
 
-3. 개인키 패스워드 제거
+3. ### 개인키 패스워드 제거
     ```
     # cp server.key server.key.origin
 
@@ -74,7 +74,7 @@
     
         ![alt text](<img/개인키 패스워드 제거.png>)
 
-4. 인증서 생성
+4. ### 인증서 생성
     ```
     # openssl x509 -req -days 3650 -in server.csr -signkey server.key -out server.crt
     ```

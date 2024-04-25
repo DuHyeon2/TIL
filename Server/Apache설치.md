@@ -11,11 +11,11 @@
 - 정적방식과 동정방식 두가지가 있다.
 
 ## 1. Apache 설치
-1. Apache 설치
+1. ### Apache 설치
     ```
     yum -y install httpd
     ```
-2. HTTP 방화벽 포트 80 열기
+2. ### HTTP 방화벽 포트 80 열기
     ```
     firewall-cmd --zone=public --permanent --add-service=http
 
