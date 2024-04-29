@@ -148,3 +148,60 @@
         # dnf config-manager --enable crb
         ```
 
+## 4. DB 저장소 Windows Mount 폴더로 변경
+1. ### cifs 설치
+    - 윈도우의 디렉토리를 mount 하기 위해 cifs 를 설치한다
+        
+        ```
+        # sudo yum install cifs-utils
+        ```
+2. ### mount할 폴더 설정
+    - 윈도우의 디렉토리를 담을 디렉토리를 생성한다
+        ```
+        # sudo mkdir /server_data
+        ```
+
+3. ### 윈도우 설정
+    - 윈도우에 mount할 폴더를 만들고 [속성]-[공유] 탭에서 공유 버튼을 눌러 컴퓨터 사용자를 추가한다.
+
+        ![alt text](img/mount-1.png)
+
+4. ### mount
+    - 이후 윈도우 폴더를 mount한다.
+        ```
+        # mount -t cifs //[컴퓨터 ip]/server_data /server_data -o username=USER,password=[비밀번호],file_mode=0750,dir_mode=0750,uid=postgres,gid=postgres
+        ```
+    - uid와 gid를 postgres로 설정하고 권한을 750 으로 주어야 한다.
+
+5. ### postgreSQL 설정
+    - 마운트된 폴더에 파일 복사하기
+    - 여기서 postgresql의 경로는 각자 다를 수 있다.
+        ```
+        # cp -rvf /var/lib/pgsql/14/data /server_data
+        ```
+
+    - mount된 폴더에서 postmaster.opts 수정
+        ```
+        # vi /server_data/data/postmaster.opts
+        ```
+
+        ```
+        /usr/pgsql-14/bin/postgres "-D" "/server_data/data"
+        ```
+
+    - postgreSQL service 수정
+        ```
+        # vi /usr/lib/systemd/system/postgresql-14.service
+        ```
+
+    - Environment 를 자신이 마운트 한 경로에 복사한 폴더로 변경
+
+        ![alt text](img/mount-2.png)
+
+    - postgresql service 등록 밑 데몬 리로드
+        ```
+        # systemctl enable postgresql-14
+
+        # systemctl daemon-reload
+        ```
+    
