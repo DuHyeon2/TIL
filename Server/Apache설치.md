@@ -21,3 +21,24 @@
 
     firewall-cmd --reload
     ```
+
+## 2. Apache 실행
+1. ### SELinux 보안 정책 설정 
+    ```
+    # cd /etc/selinux
+
+    # vi config
+    ```
+
+    ![alt text](image.png)
+
+    - selinux에 대한 보안 정책을 종료한다.
+
+2. ### 재부팅 후 실행
+    ```
+    # reboot
+
+    # systemctl start httpd
+    ```
+
+

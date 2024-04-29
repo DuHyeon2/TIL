@@ -25,7 +25,8 @@
         ```
 
     - 이후 httpd-vhosts.conf를 작성한다.
-![alt text](<img/Apache Tomcat 연동-2.png>)
+    
+        ![alt text](<img/Apache Tomcat 연동-2.png>)
 
 3. ### CentOS SELinux 정책 수정
 
@@ -136,7 +137,8 @@
 
 7. ### httpd.conf 부분 주석
     - mod_proxy에서 작성한 부분은 주석처리 해준다.
-    ![alt text](img/mod_jk-2.png)
+    
+        ![alt text](img/mod_jk-2.png)
 
 ## 3. mod_proxy_ajp
 1. 
