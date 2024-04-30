@@ -30,7 +30,7 @@
     # vi config
     ```
 
-    ![alt text](image.png)
+    ![alt text](img/Apache설치-1.png)
 
     - selinux에 대한 보안 정책을 종료한다.
 

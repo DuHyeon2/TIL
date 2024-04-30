@@ -125,7 +125,7 @@
 
 ## 3. PostgreSQL 라이브러리
 1. ### PostGIS 설치
-    - 설치 가능한 PostGI를 우선 확인한다.
+    - 설치 가능한 PostGIS를 우선 확인한다.
 
         ```
         # yum list postgis*

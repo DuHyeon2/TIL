@@ -8,8 +8,9 @@
     # mv [파일명].war /[톰캣경로]/webapps
     ```
 2. ### war파일명 변경
-    - ROOT.war 로 변경해준다
-    ![alt text](img/war배포.png)
+    - ROOT.war 로 변경해준다.
+    
+        ![alt text](img/war배포.png)
 
 3. ### Tomcat 재시작
     - tomcat을 재시작 한다.
