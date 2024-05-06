@@ -1,5 +1,5 @@
 ![alt text](<img/도커 기본이미지.png>)
-# Docker 파일로 node.js 파일 실행
+# Docker Node.js 어플 만들기
 
 ## 1. Node.js 파일 생성
 
@@ -54,7 +54,7 @@
     ![Alt text](<img/도커 파일 실행하기-1.png>)
 
 - COPY : 컨테이너에 필요한 파일을 컨테이너 안으로 가져옴
-- RUN : npm을 설치
+- RUN : package.json에 있는 종속성들 설치
 - CMD : 컨테이너가 실행됐을때 nodejs의 server.js가 실행된다
 
 
