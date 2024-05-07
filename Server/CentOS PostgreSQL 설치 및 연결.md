@@ -137,7 +137,7 @@
         ```
 
     - 자신의 PostgreSQL 버전에 맞는 PostGIS 를 설치한다.
-    - 본인은 14버전임으로 postgisXX_14 를 설치했다
+    - 본인은 14버전이므로 postgisXX_14 를 설치했다
         ```
         # yum install postgis32_14 
         ```

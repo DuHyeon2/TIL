@@ -18,3 +18,5 @@
     - AuthenticationException : 인증 실패를 처리하여 예외처리함
     - SecurityContext : 인증된 객체를 저장함
     - SuccessHandler : 인증성공을 처리함
+    
+    ![alt text](img/image.png)
