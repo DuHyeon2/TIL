@@ -1,7 +1,17 @@
 ![SpringSecurity](https://github.com/DuHyeon2/TIL/assets/83499405/e7dd78ed-ae13-4c3e-84c8-3d2d220dc188)
 
 # Spring Security란?
-- 작성예정
+- Spring Security는 Spring 기반의 보안 Framework이다.
+- 보안 관련 기능을 구현 가능하게 한다.
+- 인증, 인가를 처리하는 역할을 한다.
+
+### 인증(Authentication) 
+    - 신원을 검증
+    - 인증 프로세스로 인증이 성공되면 시스템 엑세스가 가능
+
+### 인가(Authorization)
+    - 인증된 사용자가 요청한 자원에 접근 가능한지를 결정
+    - 인증 성공 후 인가 절차가 이루어짐
 
 
 ## 1. WebSecurityConfigurerAdapter 설정
@@ -18,5 +28,5 @@
     - AuthenticationException : 인증 실패를 처리하여 예외처리함
     - SecurityContext : 인증된 객체를 저장함
     - SuccessHandler : 인증성공을 처리함
-    
+
     ![alt text](img/image.png)
