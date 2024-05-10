@@ -30,3 +30,16 @@
     - SuccessHandler : 인증성공을 처리함
 
     ![alt text](img/image.png)
+
+## 3. Logout
+- Post 방식으로 로그아웃을 요청한다.
+    - LogoutFilter : 로그아웃 요청을 처리해준다.
+    - AntPathRequestMatcher : 로그아웃 url인지 검증해 준다
+    - chain.doFilter : 로그아웃 url이 아니라면 로그아웃 처리를 하지 않고 다음 필터로 넘어간다
+    - Authentication : <b>SecurityContext</b> 에서 사용자 객체를 가져옴
+    - SecurityContext : 인증된 사용자의 객체가 담겨져있음
+    - SecurityContextLogoutHandler : 세션 무효화, 쿠키 삭제 등을 처리한다.
+    
+    ![alt text](img/Logout.png)
+
+## 4. 
