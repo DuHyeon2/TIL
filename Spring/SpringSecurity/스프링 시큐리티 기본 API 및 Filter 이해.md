@@ -29,8 +29,7 @@
     - SecurityContext : 인증된 객체를 저장함
     - SuccessHandler : 인증성공을 처리함
 
-    ![alt text](img/image.png)
-
+    ![alt text](img/Login.png)
 ## 3. Logout
 - Post 방식으로 로그아웃을 요청한다.
     - LogoutFilter : 로그아웃 요청을 처리해준다.
@@ -42,4 +41,19 @@
     
     ![alt text](img/Logout.png)
 
-## 4. 
+## 4. Remember Me 인증
+- 세션이 만료되고 웹 브라우저가 종료된 후에도 어플리케이션이 사용자를 기억하는 기능
+- Remember-Me 쿠키에 대한 Http 요청을 확인한 후 토큰 기반 인증을 사용해 유효성을 검사하고 토큰이 검증되면 사용자는 로그인 된다.
+![alt text](img/rememberme.png)
+
+    - rememberMeParameter("remember") : 기본 파라미터명
+    - tokenValiditySeconds("3600") : rememberMe 쿠키 만료 시간 설정
+    - alwaysRemeber(true) : rememberMe 기능이 활성화 할지 여부(default - true)
+    - userDetailsService(userDetailsService) : rememberMe 기능 수행 시 시스템 사용자 계정 조회
+
+- Remember Me Filter
+    - RememberMeAuthenticationFilter : 인증 객체(SecurityContext)가 없는 경우 동작(인증 객체가 있다면 인증이 되어있는 상태라 RememberMe가 필요없음)
+    - RememberMeServices : <b>TokenBasedRememberMeServices</b>와 <b>PersistentTokenBasedRememberMeService</b>로 RememberMe 인증처리
+    - TokenBasedRememberMeServices : 브라우저에 토큰을 저장함(임시적)
+    - PersistentTokenBasedRememberMeService : DB에 토큰을 저장함(영구적)
+    ![alt text](img/remembermefilter.png)
