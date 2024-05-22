@@ -57,3 +57,5 @@
     - TokenBasedRememberMeServices : 브라우저에 토큰을 저장함(임시적)
     - PersistentTokenBasedRememberMeService : DB에 토큰을 저장함(영구적)
     ![alt text](img/remembermefilter.png)
+
+## 5. AnonymousAuthenticationFilter
