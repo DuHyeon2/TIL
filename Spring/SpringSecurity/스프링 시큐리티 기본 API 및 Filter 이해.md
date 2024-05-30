@@ -59,3 +59,21 @@
     ![alt text](img/remembermefilter.png)
 
 ## 5. AnonymousAuthenticationFilter
+- 익명 사용자와 인증 사용자를 구분하기 위한 필터
+    - AnonymousAuthenticationFilter : 인증 객체(SecurityContext)가 없는 경우 익명 객체를 생성한다.
+    ![alt text](img/AnonymousAuthenticationFilter.png)
+
+## 6. 인증 API - 동시 세션 제어
+- 최대 세션 허용 개수를 초과하지 않고 유지할 수 있도록 하는 기능이 동시 세션 제어
+    - 이전 사용자 세션 만료 : 최대 세션 허용 개수가 1개일 때 사용자 1이 세선을 얻은 후 사용자 2가 세션을 얻으면 사용자 1의 세션은 만료된다.
+    - 현재 사용자 인증 실패 : 최대 세션 허용 개수가 1개일 때 사용자 1이 세선을 얻은 후 사용자 2가 세션을 얻으려 하면 인증 예외가 발생한다.
+    ![alt text](img/session-1.png)
+    - http.sessionManagement() : 세션 관리 기능을 관리
+    - maximunSessions(1) : 
+    - maxSessionsPreventsLogins(true) : true : 동시 로그인 차단(2번) / false : 기존 세션 만료(default)(1번)
+    - invalidSessionUrl(/url) : 세션이 유효하지 않을 때 이동
+    - expiredUrl(/url) : 세션이 만료될 경우 이동
+
+<!-- ## 7. 인증 API - 세션 고정 보호 
+
+![alt text](img/session-2.png) -->
