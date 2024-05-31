@@ -70,11 +70,11 @@
     ![alt text](img/session-1.png)
     - http.sessionManagement() : 세션 관리 기능을 관리
     - maximunSessions(1) : 
-    - maxSessionsPreventsLogins(true) : true : 동시 로그인 차단(2번) / false : 기존 세션 만료(default)(1번)
+    - maxSessionsPreventsLogin(true) : true : 동시 로그인 차단(2번) / false : 기존 세션 만료(default)(1번)
     - invalidSessionUrl(/url) : 세션이 유효하지 않을 때 이동
     - expiredUrl(/url) : 세션이 만료될 경우 이동
 
-## 7. 인증 API - 세션 고정 보호 
+## 7. 인증 API - 세션 고정 보호
 - 인증에 성공할때마다 새로운 세션을 생성해주는 세션 제어
     - http.sessionManagement() : 세션 관리 기능을 관리
     - sessionFixation().changeSessionId() : 기존 세션에서 설정한것을 가져오되, 새로운 세션을 갱신해줌(기본값)
@@ -88,3 +88,9 @@
     - SessinCreationPolicy.If_Required : 필요 시 생성(기본값)
     - SessinCreationPolicy.Never : 생성하지 않지만 이미 존재하면 사용
     - SessinCreationPolicy.Stateless : 생성하지 않고 존재해도 사용하지 않음
+
+<!-- ## 8. 인증 API - SessionManagementFilter
+
+![alt text](image.png)
+
+![alt text](image-1.png) -->
