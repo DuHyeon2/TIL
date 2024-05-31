@@ -74,6 +74,17 @@
     - invalidSessionUrl(/url) : 세션이 유효하지 않을 때 이동
     - expiredUrl(/url) : 세션이 만료될 경우 이동
 
-<!-- ## 7. 인증 API - 세션 고정 보호 
+## 7. 인증 API - 세션 고정 보호 
+- 인증에 성공할때마다 새로운 세션을 생성해주는 세션 제어
+    - http.sessionManagement() : 세션 관리 기능을 관리
+    - sessionFixation().changeSessionId() : 기존 세션에서 설정한것을 가져오되, 새로운 세션을 갱신해줌(기본값)
+    - sessionFixation().newSession() : 기존 세션에서 설정한것을 초기화하고, 새로운 세션을 갱신해줌
+    ![alt text](img/session-2.png)
 
-![alt text](img/session-2.png) -->
+
+## 7. 인증 API - 세션 정책
+- Spring security가 세션을 관리및 제어 해주는 기능
+    - SessinCreationPolicy.Always : 항상 세션 생성
+    - SessinCreationPolicy.If_Required : 필요 시 생성(기본값)
+    - SessinCreationPolicy.Never : 생성하지 않지만 이미 존재하면 사용
+    - SessinCreationPolicy.Stateless : 생성하지 않고 존재해도 사용하지 않음
