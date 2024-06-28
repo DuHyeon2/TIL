@@ -30,6 +30,7 @@
     - SuccessHandler : 인증성공을 처리함
 
     ![alt text](img/Login.png)
+
 ## 3. Logout
 - Post 방식으로 로그아웃을 요청한다.
     - LogoutFilter : 로그아웃 요청을 처리해준다.
@@ -56,6 +57,7 @@
     - RememberMeServices : <b>TokenBasedRememberMeServices</b>와 <b>PersistentTokenBasedRememberMeService</b>로 RememberMe 인증처리
     - TokenBasedRememberMeServices : 브라우저에 토큰을 저장함(임시적)
     - PersistentTokenBasedRememberMeService : DB에 토큰을 저장함(영구적)
+
     ![alt text](img/remembermefilter.png)
 
 ## 5. AnonymousAuthenticationFilter
@@ -81,16 +83,22 @@
     - sessionFixation().newSession() : 기존 세션에서 설정한것을 초기화하고, 새로운 세션을 갱신해줌
     ![alt text](img/session-2.png)
 
-
-## 7. 인증 API - 세션 정책
+## 8. 인증 API - 세션 정책
 - Spring security가 세션을 관리및 제어 해주는 기능
     - SessinCreationPolicy.Always : 항상 세션 생성
     - SessinCreationPolicy.If_Required : 필요 시 생성(기본값)
     - SessinCreationPolicy.Never : 생성하지 않지만 이미 존재하면 사용
     - SessinCreationPolicy.Stateless : 생성하지 않고 존재해도 사용하지 않음
 
-<!-- ## 8. 인증 API - SessionManagementFilter
+<!-- ## 9. 인증 API - SessionManagementFilter, ConcurrentSessionFilter
+- 사용자가 로그인 했을 때 최대 세션 허용 개수가 초과되었을 경우 
 
 ![alt text](image.png)
 
 ![alt text](image-1.png) -->
+
+## 10. 인가 API - 권한 설정
+- 선언적 방식과 동적 방식이 있다.
+    - 선언적 방식
+        1. URL 방식 
+        2. METHOD 방식
