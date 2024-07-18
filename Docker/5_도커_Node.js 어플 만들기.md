@@ -1,4 +1,5 @@
-![alt text](<img/도커 기본이미지.png>)
+![도커 기본이미지](https://github.com/user-attachments/assets/90b27680-a3da-473c-bc18-62e8f993a28f)
+
 # Docker Node.js 어플 만들기
 
 ## 1. Node.js 파일 생성

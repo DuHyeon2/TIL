@@ -1,3 +1,5 @@
+![도커 기본이미지](https://github.com/user-attachments/assets/90b27680-a3da-473c-bc18-62e8f993a28f)
+
 ## 1. Docker 설치
 1. ### Docker 삭제
     - 혹시 기존에 도커가 있다면 완전 삭제 하자
