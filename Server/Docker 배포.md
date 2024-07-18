@@ -22,13 +22,13 @@
     - 우선 Dockerfile작성 경로에 배포할 jar도 함께 있어야 한다.
         ```
         # Dockerfile
-        FROM openjdk:11-jdk-slim
+        FROM openjdk:11-jdk-slim # Openjdk 11이미지를 사용하겠다고 베이스 이미지 지정
 
-        WORKDIR /app
+        WORKDIR /app # 컨테이너 내부에서 작업 디렉토리를 지정
 
-        COPY ./cj_smart-1.0.0.jar ./cj_smart-1.0.0.jar
+        COPY ./cj_smart-1.0.0.jar ./cj_smart-1.0.0.jar # 컨테이너 내부의 /app 디렉토리에 ./cj_smart-1.0.0.jar 를 복사한다.
 
-        CMD ["java", "-jar", "./cj_smart-1.0.0.jar"]
+        CMD ["java", "-jar", "./cj_smart-1.0.0.jar"] # 컨테이너가 시작될 때 실행할 기본 명령어를 지정
 
         ```
 
