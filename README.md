@@ -9,7 +9,7 @@
 - [Debezium](https://github.com/DuHyeon2/DailyStudy/blob/main/Spring/Debezium/Debezium.md)
 - [WebSocket](https://github.com/DuHyeon2/DailyStudy/blob/main/Spring/WebSocket/WebSocket.md)
 - [SpringSecurity](https://github.com/DuHyeon2/DailyStudy/blob/main/Spring/SpringSecurity)
-  - [스프링 시큐리티 기본 API 및 Filter 이해](https://github.com/DuHyeon2/TIL/blob/main/Spring/SpringSecurity/스프링%20시큐리티%20기본%20API%20및%20Filter%20이해.md)
+- [스프링 시큐리티 기본 API 및 Filter 이해](https://github.com/DuHyeon2/TIL/blob/main/Spring/SpringSecurity/스프링%20시큐리티%20기본%20API%20및%20Filter%20이해.md)
 
 
 
