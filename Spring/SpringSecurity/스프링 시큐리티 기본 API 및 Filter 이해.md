@@ -90,15 +90,35 @@
     - SessinCreationPolicy.Never : 생성하지 않지만 이미 존재하면 사용
     - SessinCreationPolicy.Stateless : 생성하지 않고 존재해도 사용하지 않음
 
-<!-- ## 9. 인증 API - SessionManagementFilter, ConcurrentSessionFilter
-- 사용자가 로그인 했을 때 최대 세션 허용 개수가 초과되었을 경우 
+## 9. 인증 API - SessionManagementFilter, ConcurrentSessionFilter
+    - 사용자가 로그인 했을 때 최대 세션 허용 개수가 초과되었을 경우 
 
-![alt text](image.png)
+- SessionManagementFilter가 하는일
+    - 세션 관리 : 인증 시 사용자의 세션정보를 등록, 조회, 삭제 등의 세션 이력을 관리
+    - 동시적 세션 제어 : 동일 계정으로 접속이 허용되는 최대 세션수를 제한
+    - 세션 고정 보호 : 인증 할 때마다 세션쿠키를 새로 발급하여 공격자의 쿠키 조작을 방지
+    - 세션 생성 정책 : Always, If_Required, Never, Stateless
+    
+- ConcurrentSessionFilter
+    - 동시적 세션 제어를 관리
+    - 매 요청마다 현재 사용자의 세션 만료 여부 체크
+    - 세션이 만료되었을 경우 즉시 만료 처리
+    - 사용자가 로그인 시도시 <b>ConcurrentSessionFilter<b>가 최대 허용 세션을 체크해서 세션을 만료 처리한다.
+    ![alt text](image.png)
 
-![alt text](image-1.png) -->
 
 ## 10. 인가 API - 권한 설정
+- 계정 권한에 따라 접근을 제어하는 필터
 - 선언적 방식과 동적 방식이 있다.
     - 선언적 방식
         1. URL 방식 
+            - http.antMatchers("/users/**").hasRole("USER")
         2. METHOD 방식
+            - @PreAuthorize("hasRole('USER')")
+        
+        - 위에서 아래 순서대로 인가 처리가 된다.
+
+<!-- ## 11. 인증/인가 API - ExceptionTranslationFilter
+- AuthenticationException
+    - 인증 예외처리
+     -->
