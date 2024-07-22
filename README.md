@@ -44,3 +44,4 @@
 ## 🔨Programmers
 - [Lv1](https://github.com/DuHyeon2/TIL/tree/main/Programmers/Lv1)
   - [문자열 내 p와 y의 개수](https://github.com/DuHyeon2/TIL/blob/main/Programmers/Lv1/%EB%AC%B8%EC%9E%90%EC%97%B4%20%EB%82%B4%20p%EC%99%80%20y%EC%9D%98%20%EA%B0%9C%EC%88%98.md)
+  - [문자열을 정수로 바꾸기](https://github.com/DuHyeon2/TIL/blob/main/Programmers/Lv1/%EB%AC%B8%EC%9E%90%EC%97%B4%EC%9D%84%20%EC%A0%95%EC%88%98%EB%A1%9C%20%EB%B0%94%EA%BE%B8%EA%B8%B0.md)
