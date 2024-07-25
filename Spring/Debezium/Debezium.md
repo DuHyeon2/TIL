@@ -33,74 +33,113 @@ CDC란 Change Data Capture의 약자로 변경된 내용을 골라내는 패턴�
 - DB는 PostgreSQL 11
 
 ## 3. 구현하기
-```
-import io.debezium.embedded.EmbeddedEngine;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-import java.util.Properties;
-
-@Configuration
-public class DebeziumConfig {
-
-    private static final Logger LOGGER = LoggerFactory.getLogger(DebeziumConfig.class);
+- # DebeziumConfig
+  ```
+  import org.springframework.beans.factory.annotation.Value;
+  import org.springframework.context.annotation.Bean;
+  import org.springframework.context.annotation.Configuration;
 
 
-    @Value("#{globalInfo['Globals.postgresql.url']}")
-    private String url;
+  //TODO: DB wal_level 이 logical 일때만 사용가능(현재 replica)
+  @Configuration
+  public class DebeziumConfig {
 
-    @Value("#{globalInfo['Globals.postgresql.username']}")
-    private String username;
+      @Value("#{globalInfo['Globals.postgresqlFlood.url']}")
+      private String url;
 
-    @Value("#{globalInfo['Globals.postgresql.password']}")
-    private String password;
+      @Value("#{globalInfo['Globals.postgresqlFlood.username']}")
+      private String username;
 
-    @Value("#{globalInfo['Globals.postgresql.dburl']}")
-    private String dburl;
+      @Value("#{globalInfo['Globals.postgresqlFlood.password']}")
+      private String password;
 
-    @Value("#{globalInfo['Globals.postgresql.port']}")
-    private String port;
+      @Value("#{globalInfo['Globals.postgresqlFlood.dburl']}")
+      private String dburl;
 
-    @Value("#{globalInfo['Globals.postgresql.host']}")
-    private String host;
+      @Value("#{globalInfo['Globals.postgresqlFlood.port']}")
+      private String port;
 
-    @Value("#{globalInfo['Globals.postgresql.dbname']}")
-    private String dbname;
+      @Value("#{globalInfo['Globals.postgresqlFlood.host']}")
+      private String host;
 
+      @Value("#{globalInfo['Globals.postgresqlFlood.dbname']}")
+      private String dbname;
 
-    @Bean
-    public EmbeddedEngine debeziumEngine() {
-        Properties props = new Properties();
-        props.setProperty("name", "임의 커넥터 이름");
-        props.setProperty("connector.class", "io.debezium.connector.postgresql.PostgresConnector");
-        props.setProperty("table.whitelist", "감지할 테이블");
-        props.setProperty("database.hostname", host);
-        props.setProperty("database.port", port);
-        props.setProperty("database.dbname", dbname);
-        props.setProperty("database.user", username);
-        props.setProperty("database.password", password);
-        props.setProperty("database.server.name", "임의설정");
-        props.setProperty("plugin.name", "pgoutput");
+      @Bean
+      public io.debezium.config.Configuration debeziumConnector(){
+          return io.debezium.config.Configuration.create()
+                  .with("name", "임의 커넥터 이름")
+                  .with("connector.class", "io.debezium.connector.postgresql.PostgresConnector")
+                  .with("database.hostname", host)
+                  .with("database.port", port)
+                  .with("database.user", username)
+                  .with("database.password", password)
+                  .with("database.dbname", dbname)
+                  .with("database.server.name", "임의 설정")
+                  .with("table.include.list", "감지할 테이블")
+                  .with("plugin.name", "pgoutput")
+                  .with("slot.name", "슬롯 이름")
+                  .with("slot.drop.on.stop", "false")
+                  .with("offset.storage", "org.apache.kafka.connect.storage.FileOffsetBackingStore")
+                  .with("offset.storage.file.filename", "./offsets.dat")
+                  .with("offset.flush.interval.ms", "60000")
+                  .build();
+      }
+  }
+  ```
 
-        EmbeddedEngine engine = (EmbeddedEngine) EmbeddedEngine.create()
-                .using(props)
-                .notifying(record -> {
-                    LOGGER.info("Received record: {}", record);
-                })
-                .build();
-        System.out.println("Debezium engine : " + engine);
+- # DebeziumListener
+  ```
+  import io.debezium.config.Configuration;
+  import io.debezium.embedded.Connect;
+  import io.debezium.engine.DebeziumEngine;
+  import io.debezium.engine.RecordChangeEvent;
+  import io.debezium.engine.format.ChangeEventFormat;
+  import lombok.extern.slf4j.Slf4j;
+  import org.apache.kafka.connect.source.SourceRecord;
+  import org.springframework.stereotype.Component;
 
-        new Thread(engine::run).start();
+  import javax.annotation.PostConstruct;
+  import javax.annotation.PreDestroy;
+  import java.io.IOException;
+  import java.util.concurrent.Executor;
+  import java.util.concurrent.Executors;
 
-        return engine;
-    }
+  @Slf4j
+  @Component
+  public class DebeziumListener {
+      private final Executor executor = Executors.newSingleThreadExecutor();
+      private final DebeziumEngine<RecordChangeEvent<SourceRecord>> debeziumEngine;
 
-}
-```
-- Spring에서 자신이 연결한 DB를 Debezium에서도 설정 <br>
+      public DebeziumListener(Configuration config) {
+          System.out.println("DebeziumListener Start");
+          this.debeziumEngine = DebeziumEngine.create(ChangeEventFormat.of(Connect.class))
+                  .using(config.asProperties())
+                  .notifying(this::handleRecord)
+                  .build();
+      }
+
+      private void handleRecord(RecordChangeEvent<SourceRecord> record) {
+          System.out.println(record);
+          // 감지한 데이터를 처리하는 로직 작성
+      }
+
+      @PostConstruct
+      public void start() {
+          this.executor.execute(debeziumEngine);
+      }
+
+      @PreDestroy
+      public void stop() throws IOException {
+          if (this.debeziumEngine != null) {
+              this.debeziumEngine.close();
+          }
+      }
+  }
+  ```
+
+- Spring에서 자신이 연결한 DB를 Debezium에서도 설정
 - 이휴 쓰레드 형식을 이용해 변경되는 데이터를 실시간으로 감지
 
 ## 4. 주의사항
