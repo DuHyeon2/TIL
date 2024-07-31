@@ -103,8 +103,8 @@
     - 동시적 세션 제어를 관리
     - 매 요청마다 현재 사용자의 세션 만료 여부 체크
     - 세션이 만료되었을 경우 즉시 만료 처리
-    - 사용자가 로그인 시도시 <b>ConcurrentSessionFilter<b>가 최대 허용 세션을 체크해서 세션을 만료 처리한다.
-    ![alt text](image.png)
+    - 사용자가 로그인 시도시 <b>ConcurrentSessionFilter</b>가 최대 허용 세션을 체크해서 세션을 만료 처리한다.
+    ![alt text](img/image.png)
 
 
 ## 10. 인가 API - 권한 설정
@@ -118,7 +118,16 @@
         
         - 위에서 아래 순서대로 인가 처리가 된다.
 
-<!-- ## 11. 인증/인가 API - ExceptionTranslationFilter
+
+## 11. 인증/인가 API - ExceptionTranslationFilter
 - AuthenticationException
     - 인증 예외처리
-     -->
+        1. AuthenticationEntryPoint
+            - 로그인 페이지 이동, 401 오류코드 전달
+        2. 인증 예외가 발생하기 전의 요청 정보 저장
+            - RequestCache : 사용자의 이전 요청 정보를 세션에 저장하고 이를 꺼내 오는 캐시 메카니즘
+            - SavedRequest : 사용자가 요청했던 request 파라미터 값들, 그 당시의 헤더값들 등이 저장
+
+- AccessDeniedException
+    - 인가 예외처리 : AccessDeniedHandler에서 예외 처리하도록 제공
+        ![alt text](img/image-2.png)
