@@ -26,9 +26,9 @@
 
         WORKDIR /app # 컨테이너 내부에서 작업 디렉토리를 지정
 
-        COPY ./cj_smart-1.0.0.jar ./cj_smart-1.0.0.jar # 컨테이너 내부의 /app 디렉토리에 ./cj_smart-1.0.0.jar 를 복사한다.
+        COPY ./test-1.0.0.jar ./test-1.0.0.jar # 컨테이너 내부의 /app 디렉토리에 ./test-1.0.0.jar 를 복사한다.
 
-        CMD ["java", "-jar", "./cj_smart-1.0.0.jar"] # 컨테이너가 시작될 때 실행할 기본 명령어를 지정
+        CMD ["java", "-jar", "./test-1.0.0.jar"] # 컨테이너가 시작될 때 실행할 기본 명령어를 지정
 
         ```
 
@@ -39,7 +39,7 @@
         version: "3"
         services:
             app:
-                container_name: cj_smart
+                container_name: test
                 build: .
                 restart: always
                 environment:
