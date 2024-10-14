@@ -10,7 +10,7 @@ CDC란 Change Data Capture의 약자로 변경된 내용을 골라내는 패턴�
 - Debezium은 Kafka기반의 변경된 데이터 캡쳐를 위한 오픈 소스 분산 플랫폼이다.  <br>
 - 데이터가 변경되면 Debezium은 변경된 데이터를 캡쳐 해 Kafka에 전달한다. <br>
 
-## 2. Debezium 설정하기(Spring)
+## 2. Embedded Debezium 설정하기(Spring)
 - pom.xml 설정
 ```
 <dependency>
@@ -45,25 +45,25 @@ CDC란 Change Data Capture의 약자로 변경된 내용을 골라내는 패턴�
   @Configuration
   public class DebeziumConfig {
 
-      @Value("#{globalInfo['Globals.postgresqlFlood.url']}")
+      @Value("${spring.datasource.db1.url}")
       private String url;
 
-      @Value("#{globalInfo['Globals.postgresqlFlood.username']}")
+      @Value("${spring.datasource.db1.username}")
       private String username;
 
-      @Value("#{globalInfo['Globals.postgresqlFlood.password']}")
+      @Value("${spring.datasource.db1.password}")
       private String password;
 
-      @Value("#{globalInfo['Globals.postgresqlFlood.dburl']}")
+      @Value("${spring.datasource.db1.url}")
       private String dburl;
 
-      @Value("#{globalInfo['Globals.postgresqlFlood.port']}")
+      @Value("${spring.datasource.db1.port}")
       private String port;
 
-      @Value("#{globalInfo['Globals.postgresqlFlood.host']}")
+      @Value("${spring.datasource.db1.host}")
       private String host;
 
-      @Value("#{globalInfo['Globals.postgresqlFlood.dbname']}")
+      @Value("${spring.datasource.db1.dbname}")
       private String dbname;
 
       @Bean
