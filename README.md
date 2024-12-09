@@ -44,7 +44,26 @@
 - [Docker 배포](https://github.com/DuHyeon2/TIL/blob/main/Server/Docker%20%EB%B0%B0%ED%8F%AC.md)
 
 
-## 🔨Programmers
+## ⚙️Programmers
 - [Lv1](https://github.com/DuHyeon2/TIL/tree/main/Programmers/Lv1)
   - [문자열 내 p와 y의 개수](https://github.com/DuHyeon2/TIL/blob/main/Programmers/Lv1/%EB%AC%B8%EC%9E%90%EC%97%B4%20%EB%82%B4%20p%EC%99%80%20y%EC%9D%98%20%EA%B0%9C%EC%88%98.md)
   - [문자열을 정수로 바꾸기](https://github.com/DuHyeon2/TIL/blob/main/Programmers/Lv1/%EB%AC%B8%EC%9E%90%EC%97%B4%EC%9D%84%20%EC%A0%95%EC%88%98%EB%A1%9C%20%EB%B0%94%EA%BE%B8%EA%B8%B0.md)
+  - [약수의 합](https://github.com/DuHyeon2/TIL/blob/main/Programmers/Lv1/%EC%95%BD%EC%88%98%EC%9D%98%20%ED%95%A9.md)
+  - [자릿수 더하기](https://github.com/DuHyeon2/TIL/blob/main/Programmers/Lv1/%EC%9E%90%EB%A6%BF%EC%88%98%20%EB%8D%94%ED%95%98%EA%B8%B0.md)
+  - [자연수 뒤집어 배열로 만들기](https://github.com/DuHyeon2/TIL/blob/main/Programmers/Lv1/%EC%9E%90%EC%97%B0%EC%88%98%20%EB%92%A4%EC%A7%91%EC%96%B4%20%EB%B0%B0%EC%97%B4%EB%A1%9C%20%EB%A7%8C%EB%93%A4%EA%B8%B0.md)
+  - [짝수와 홀수](https://github.com/DuHyeon2/TIL/blob/main/Programmers/Lv1/%EC%A7%9D%EC%88%98%EC%99%80%20%ED%99%80%EC%88%98.md)
+
+- [Lv2](https://github.com/DuHyeon2/TIL/tree/main/Programmers/Lv2)
+  - [최댓값과 최솟값](https://github.com/DuHyeon2/TIL/blob/main/Programmers/Lv2/%EC%B5%9C%EB%8C%93%EA%B0%92%EA%B3%BC%20%EC%B5%9C%EC%86%9F%EA%B0%92.md#%EC%B5%9C%EB%8C%93%EA%B0%92%EA%B3%BC-%EC%B5%9C%EC%86%9F%EA%B0%92)
+  - [최솟값 만들기](https://github.com/DuHyeon2/TIL/blob/main/Programmers/Lv2/%EC%B5%9C%EC%86%9F%EA%B0%92%20%EB%A7%8C%EB%93%A4%EA%B8%B0.md)
+  - [JadenCase 문자열 만들기](https://github.com/DuHyeon2/TIL/blob/main/Programmers/Lv2/JadenCase%20%EB%AC%B8%EC%9E%90%EC%97%B4%20%EB%A7%8C%EB%93%A4%EA%B8%B0.md)
+  - [이진 변환 반복하기](https://github.com/DuHyeon2/TIL/blob/main/Programmers/Lv2/%EC%9D%B4%EC%A7%84%20%EB%B3%80%ED%99%98%20%EB%B0%98%EB%B3%B5%ED%95%98%EA%B8%B0.md)
+  - [숫자의 표현](https://github.com/DuHyeon2/TIL/blob/main/Programmers/Lv2/%EC%88%AB%EC%9E%90%EC%9D%98%20%ED%91%9C%ED%98%84.md)
+  - [다음 큰 숫자](https://github.com/DuHyeon2/TIL/blob/main/Programmers/Lv2/%EB%8B%A4%EC%9D%8C%20%ED%81%B0%20%EC%88%AB%EC%9E%90.md)
+  - [파보나치 수](https://github.com/DuHyeon2/TIL/blob/main/Programmers/Lv2/%ED%8C%8C%EB%B3%B4%EB%82%98%EC%B9%98%20%EC%88%98.md)
+  - [짝지어 제거하기](https://github.com/DuHyeon2/TIL/blob/main/Programmers/Lv2/%EC%A7%9D%EC%A7%80%EC%96%B4%20%EC%A0%9C%EA%B1%B0%ED%95%98%EA%B8%B0.md)
+
+
+## 🔗CI/CD
+  - [00_AWS 지식](https://github.com/DuHyeon2/TIL/blob/main/CICD/00_AWS%20%EC%A7%80%EC%8B%9D.md)
+  - [01 CICD](https://github.com/DuHyeon2/TIL/blob/main/CICD/01_CICD.md)
