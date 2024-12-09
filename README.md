@@ -65,5 +65,6 @@
 
 
 ## 🔗CI/CD
-  - [00_AWS 지식](https://github.com/DuHyeon2/TIL/blob/main/CICD/00_AWS%20%EC%A7%80%EC%8B%9D.md)
-  - [01 CICD](https://github.com/DuHyeon2/TIL/blob/main/CICD/01_CICD.md)
+  - [00_AWS 지식](https://github.com/DuHyeon2/TIL/blob/main/CI%26CD/00_AWS%20지식.md)
+  - [01_CI&CD](https://github.com/DuHyeon2/TIL/blob/main/CI%26CD/01_CI%26CD.md)
+  
