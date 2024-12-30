@@ -8,6 +8,9 @@
     $ sudo apt update
     $ sudo apt install openjdk-17-jdk -y # java 17 버전 다운로드
     $ git config --global credential.helper store # 깃허브 아이디와 토큰 저장하는 명령어
+    $ git clone [repository 주소]
+    
+    $ github id와 token을 입력하라고 함
     ```
 
 ## 2. deploy.yml 설정
@@ -51,4 +54,4 @@
     ```
 
 ## 3. clone받은 repository에서 secret 값을 각각 설정
-![Alt text](<스크린샷 2024-12-31 오전 12.30.03.png>)
+![Alt text](<img/02_Repository Secret.png>)
