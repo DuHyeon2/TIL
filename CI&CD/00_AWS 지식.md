@@ -43,10 +43,10 @@
 ## 9. AWS에 Spring Boot 프로젝트 배포하기
 - 자바17 설치 후 프로젝트 소스 다운
     ```
-        # sudo apt update && / 
+        $ sudo apt update && / 
         sudo apt install openjdk-17-jdk -y
 
-        # git clone [github링크]
+        $ git clone [github링크]
     ```
 - application.yml 파일 만들기(src/main/resources/application.yml)
     ```
@@ -58,9 +58,9 @@
 
 - 서버 실행시키기
     ```
-        # ./gradlew clean build
-        # cd ~/[프로젝트경로]/build/libs
-        # sudo java -jar [프로젝트명]-0.0.1-SNAPSHOT.jar
+        $ ./gradlew clean build
+        $ cd ~/[프로젝트경로]/build/libs
+        $ sudo java -jar [프로젝트명]-0.0.1-SNAPSHOT.jar
     ```
 
 - 결과
