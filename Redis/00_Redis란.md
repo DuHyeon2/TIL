@@ -1,3 +1,5 @@
+![redis](https://github.com/user-attachments/assets/b7b855de-7bcc-403e-9e5f-f11b0ac8a277)
+
 # Redis란?
 - Redis란 데이터 처리 속도가 엄청 빠른 NoSQL 데이터베이스이다.
 
