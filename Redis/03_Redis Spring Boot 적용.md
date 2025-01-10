@@ -12,5 +12,5 @@
 - Redis Cache 저장 후
 ![alt text](<img/03_Redis Spring Boot 값 넣기 후.png>)
 
-- Redis 결과
+- Redis 결과  
 ![alt text](<img/03_Redis Spring Boot 값 결과.png>)
