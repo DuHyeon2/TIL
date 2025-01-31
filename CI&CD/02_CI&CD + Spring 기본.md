@@ -1,6 +1,6 @@
 ![ci-cd](https://github.com/user-attachments/assets/20f71753-d6da-457e-8dab-62bb79cb998e)
 
-# CI&CD + Spring
+# CI&CD + Spring 기본
 
 ## 1. EC2 제작 및 설정 
 - EC2 ubuntu 서버 설정
@@ -40,17 +40,20 @@
         steps:
         - name: SSH로 EC2에 접속하기
             user: appleboy/ssh-action@v1.0.3 # SSH로 EC2에 접속하기 위한 라이브러리
+            env: APPLICATION_PROPERTIES: ${{ secrets.APPLICATION_PROPERTIES }}
             with:
-            host: ${{ secrets.EC2_HOST }} # EC2 인스턴스의 IP 주소
-            username: ${{ secrets.EC2_USERNAME }} # EC2 인스턴스의 사용자 이름(ubuntu)
-            key: ${{ secrets.EC2_PRIVATE_KEY }} # EC2 인스턴스의 개인 키(key.pem) cat으로 열어서 복사(% 앞까지)
-            script_stop: true
-            script: | # 소스 코드 커밋하고 빌드 및 실행하는 스크립트를 전부 작성한다 
-                cd /home/ubuntu/[프로젝트 경로]
-                git pull origin main
-                ./gradlew clean build
-                sudo fuser -k -n tcp 808 || true
-                nphub java -jar build/libs/*SNAPSHOT.jar > ./output.log 2>&1 &
+                host: ${{ secrets.EC2_HOST }} # EC2 인스턴스의 IP 주소
+                username: ${{ secrets.EC2_USERNAME }} # EC2 인스턴스의 사용자 이름(ubuntu)
+                key: ${{ secrets.EC2_PRIVATE_KEY }} # EC2 인스턴스의 개인 키(key.pem) cat으로 열어서 복사(% 앞까지)
+                script_stop: true
+                script: | # 소스 코드 커밋하고 빌드 및 실행하는 스크립트를 전부 작성한다 
+                    cd /home/ubuntu/[프로젝트 경로]
+                    rm -rf src/main/resources/application.yml
+                    git pull origin main
+                    echo "$APPLICATION_PROPERTIES" > src/main/resources/application.yml
+                    ./gradlew clean build
+                    sudo fuser -k -n tcp 808 || true
+                    nphub java -jar build/libs/*SNAPSHOT.jar > ./output.log 2>&1 &
     ```
 
 ## 3. clone받은 repository에서 secret 값을 각각 설정

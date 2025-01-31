@@ -1,6 +1,6 @@
 ![redis](https://github.com/user-attachments/assets/b7b855de-7bcc-403e-9e5f-f11b0ac8a277)
 
-# Redis 설치
+# Redis 설치 및 명령어
 - MacOS와 Windows 설치법으로 나뉜다.
 
 ## 1. Redis 설치(MacOS)
