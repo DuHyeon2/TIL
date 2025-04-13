@@ -1,7 +1,13 @@
 ![Kubernetes](https://github.com/user-attachments/assets/3ec2d35d-184a-480a-878f-1f89f9547880)
 
 # Kubernets란
-
+- 다수의 컨테이너를 효율적으로 배포, 확정 및 관리하기 위한 오픈 소스 시스템
+- Docker Compose의 확장판이라 생각!
+- 장점
+    - 컨테이너 관리 자동화
+    - 부하 분산(로드 밸런싱)
+    - 쉬운 스케일링(트레픽 정도에 따라 서버 늘림)
+    - 셀프 힐링(특정 프로그램이 죽을 때 다시 재시작 시켜줌)
 
 ## 1. Linux OS
  - 주로 사용하는 리눅스에는 Debian과 Redhat 걔열이 있다.
