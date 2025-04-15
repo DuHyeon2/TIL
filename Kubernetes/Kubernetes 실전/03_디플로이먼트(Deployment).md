@@ -2,10 +2,15 @@
 
 # 디플로이먼트
 - 파트를 묶음으로 쉽게 관리할 수 있는 기능
+- 현업에선 파드를 직접 생성하여 수동으로 배포하진 않는다
+- 장점
+    1. 파의 수를 지정하는 대로 여러개의 파드를 쉽게 생성가능
+    2. 파드가 비정상적으로 종료된 경우, 새 파를 생성해 파드 수를 유지
 
 ## 1. 디플로이먼트 생성
 - yaml 파일 생성
     ```
+    # spring-deployment.yaml
     apiVersion: apps/v1 # 디플로이먼트를 생성하기 위한 apiVersion(apps/v1을 사용해야함)
     kind: Deployment
 
@@ -29,4 +34,9 @@
                 imagePullPolicy: IfNotPresent # 이미지 풀 정책
                 ports:
                     - containerPort: 8080
+    ```
+
+- 디플로이먼트 생성
+    ```
+    $ kubectl apply -f spring-deployment.yaml
     ```

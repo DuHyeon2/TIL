@@ -19,13 +19,13 @@
             ports:
             - containerPort: 80 # Pod의 컨테이너에서 사용되고 있는 포트(실행되는 port의 정보를 적는거지 port를 열어주는건 아님-문서상 사용)
     ```
-    - yaml파일을 보고 Mainfest File이라 부른다
+    - yaml파일을 보고 Manifest File이라 부른다
     - 쿠버네티스에서 여러가지 리소스를 생성하고 관리하기위해 생성하는 파일
     - 도커에선 도커파일쯤이라 생각
 
 - 실행
     ```
-    % kubectl apply -f nginx-pod.yaml 
+    $ kubectl apply -f nginx-pod.yaml 
     ```
 
 - pod 접속이 안되는 이유?
@@ -35,9 +35,9 @@
     1. 포트 포워딩
         - 파드와 로컬컴퓨터의 포트를 포워딩
         ```
-        % sudo kubectl port-forward pod/nginx-pod(파드이름) 80(로컬 포트):80(파드 내 포트)
+        $ sudo kubectl port-forward pod/nginx-pod(파드이름) 80(로컬 포트):80(파드 내 포트)
         ```
 - 종료
     ```
-    % kubectl delete pod nginx-pod(파드이름)
+    $ kubectl delete pod nginx-pod(파드이름)
     ```

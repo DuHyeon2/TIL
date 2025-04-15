@@ -24,8 +24,8 @@
     $ docker image ls
     ```
 
-## 2. Pod(매니페스트) 생성
-- yaml 파일 생성
+## 2. Pod 생성
+- yaml(매니페스트) 파일 생성
     ```
     # spring-pad.yaml
     apiVersion: v1
@@ -43,22 +43,22 @@
               imagePullPolicy: IfNotPresent # 이미지 풀 정책 설정
     ```
 
-- Pod(매니페스트) 생성
+- Pod 생성
     ```
     $ kubectl apply -f spring-pod.yaml  
     ```
 
-- Pod(매니페스트) 생성 확인
+- Pod 생성 확인
     ```
     $ kubectl get pods
     ```
 
-- Pod(매니페스트) 삭제
+- Pod 삭제
     ```
     $ kubectl delete pod spring-pod(파드이름)
     ```
 
-- Pod(매니페스트) 디버깅
+- Pod 디버깅
     ```
     $ kubectl describe pods spring-pod(파드이름)
 
