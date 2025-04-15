@@ -40,3 +40,8 @@
     ```
     $ kubectl apply -f spring-deployment.yaml
     ```
+
+- 디플로이먼트 재시작
+    ```
+    $ kubectl rollout restart deployment spring-deployment 
+    ```

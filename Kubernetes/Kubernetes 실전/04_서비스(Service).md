@@ -20,7 +20,7 @@
     spec:
         type: NodePort # 서비스 종류
         selector: # 파드에서 설정한 레이블과 일치하는 파드를 선택
-            app: backend-app # backend-app 레이블을 가진 파드와 서비스를 연결!
+            app: backend-app # backend-app 레이블을 가진 파드와 서비스를 연결!(deployment의 label과 일치시켜야함)
         ports:
           - protocol: TCP # 서비스에 접속하기 위한 프로토콜
             port: 8080 # 쿠버네티스 내부에서 Service에 접근하기 위한 포트 번호
