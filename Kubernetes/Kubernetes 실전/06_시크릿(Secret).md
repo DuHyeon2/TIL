@@ -1,26 +1,24 @@
 ![Kubernetes](https://github.com/user-attachments/assets/3ec2d35d-184a-480a-878f-1f89f9547880)
 
-# 컨피그맵이란
-- 쿠버네티스 내 환경 변수를 관리하는 역할
-- 디플로이먼트 내에서 환경 변수를 작성할 수 있지만 다른 환경에서 서버 실행 시 유연하게 설정 값을 변경하기 난해해짐
+# 시크릿이란
 
-## 1. 컨피그맵 생성
+## 1. 시크릿 생성
 - yaml 파일 생성
     ```
-    # spring-config.yaml
+    # spring-secret.yaml
     apiVersion: v1
-    kind: ConfigMap
+    kind: Secret
 
     metadata:
-        name: spring-config
-
-    data:
-        my-account: 'duhyeon'
+        name: spring-secret
+    
+    stringData:
+        my-password: 'my-secret-password'
     ```
 
-- 컨피그맵 생성
+- 시크릿 생성
     ```
-    $ kubectl apply -f spring-config.yaml
+    $ kubectl apply -f spring-secret.yaml
     ```
 
 ## 2. 디플로이먼트 내에 환경변수 사용
@@ -53,10 +51,15 @@
                   # 아래에부터 환경변수 추가
                   env :
                       - name : MY_ACCOUNT
-                        valueFrom : 
+                        valueFrom: 
                             configMapKeyRef:
                                 name : spring-config # configMap의 이름
                                 key : my-account # configMap에 설정되어 있는 Key값 
+                      - name : MY_PASSWORD
+                        valueFrom: 
+                            secretKeyRef:
+                                name: spring-secret
+                                key: my-password 
     ```
 
 - 디플로이먼트 수정 반영
