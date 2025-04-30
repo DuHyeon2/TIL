@@ -4,6 +4,8 @@
 - 이벤트 스트림을 게시(쓰기)하고 구독(읽기)한다.
 
 ## 1. Producer
+- Topic에 메세지를 보내는 역할
+- 메세지를 보낼때 Topic과 Value는 무조건 지정해줘야함
 
 ## 2. Topic
 - Partition으로 구성된 로그 파일
@@ -14,6 +16,12 @@
 - 시간의 흐름에 따라 메시지가 순차적으로 offset값이 증가하면서 물리적인 파일에 Write된다.
 
 ## 3. Partition
-- Kafka의 병렬 분산처리의 핵심
+- Kafka의 병렬 분산처리의 핵심 
+- Kafka가 유명해진 이유가 병렬 성능이 좋아서
+- Partition떄문에 Kafka가 유명해졌다 봐도 된다
 
-## 4. Consumer
+## 4. Offset
+- 토픽 내 파티션에 추가된 메세지의 일련 번호
+
+## 5. Consumer
+- Topic에서 메세지를 읽어 들임
