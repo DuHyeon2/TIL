@@ -1,4 +1,4 @@
-# 카프카 기본 사용
+# Kafka 기본 사용
 
 ## 1. 토픽 생성
 ```
@@ -15,7 +15,7 @@ $ kafka-topics --bootstrap-server localhost:9092 --create --topic <토픽명> <�
 ```
 $ kafka-topics --bootstrap-server localhost:9092 --list
 ```
-- 카프카 브로커에 있는 Topic 리스트
+- Kafka 브로커에 있는 Topic 리스트
 
 ## 3. 토픽 삭제
 ```
