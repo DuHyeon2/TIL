@@ -26,4 +26,3 @@ $ kafka-topic --bootstrap-server localhost:9092 --delete --topic <토픽명>
 ```
 $ kafka-topic --bootstrap-server localhost:9092 --describe <토픽명>
 ```
-
