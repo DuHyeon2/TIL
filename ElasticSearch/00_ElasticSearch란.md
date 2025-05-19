@@ -16,7 +16,7 @@
     INSERT INTO users(name, email) VALUES ('Elastic', 'test@test.com')
     ```
 
-    ```bash
+    ```powershell
      curl -X POST "localhost:9200/user/_doc" -H 'Content-Type: applycation/json' -
      {
         "name": "Elastic",

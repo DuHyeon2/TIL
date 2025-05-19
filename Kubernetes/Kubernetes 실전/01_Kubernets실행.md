@@ -4,7 +4,7 @@
 
 ## 1. pod생성
 - yaml 파일 생성
-    ```
+    ```bash
     # nginx-pod.yaml
     apiVersion: v1 # Pod를 생성하기 위한 apiVersion(v1을 사용해야함)
     kind: Pod # Pod라는 리소스 생성
@@ -24,7 +24,7 @@
     - 도커에선 도커파일쯤이라 생각
 
 - 실행
-    ```
+    ```bash
     $ kubectl apply -f nginx-pod.yaml 
     ```
 
