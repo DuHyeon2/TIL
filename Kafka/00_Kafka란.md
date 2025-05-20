@@ -1,3 +1,5 @@
+![Image](https://github.com/user-attachments/assets/44775098-769e-4d9c-9f2e-66d54322dc8f)
+
 # Kafka 란
 - 대용량 데이터 처리를 하는 메세징 시스템
 - Stream 처리와 실시간 데이터 파이프라인 및 대규모 데이터 통합을 위한 시스템
