@@ -1,3 +1,5 @@
+![Image](https://github.com/user-attachments/assets/c4318983-db7b-4768-a789-7c33a3fbf220)
+
 # ElasticSearch 사용법
 
 ## 1. 인덱스 생성/조회/삭제

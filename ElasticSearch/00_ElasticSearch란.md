@@ -1,3 +1,5 @@
+![Image](https://github.com/user-attachments/assets/c4318983-db7b-4768-a789-7c33a3fbf220)
+
 # ElasticSearch란?
 
 ## 1. ElasticSearch
@@ -16,7 +18,7 @@
     INSERT INTO users(name, email) VALUES ('Elastic', 'test@test.com')
     ```
 
-    ```powershell
+    ```bash
      curl -X POST "localhost:9200/user/_doc" -H 'Content-Type: applycation/json' -
      {
         "name": "Elastic",
