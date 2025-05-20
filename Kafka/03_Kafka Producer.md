@@ -1,3 +1,5 @@
+![Image](https://github.com/user-attachments/assets/44775098-769e-4d9c-9f2e-66d54322dc8f)
+
 # Kafka Producer
 
 ## 1. Producer란
@@ -15,6 +17,6 @@
     - 파티션 전략이 선택되어 파티션 별로 메세지가 전송될 수 있음
     - Topic이 여러개의 파티션을 가질 때 메세지의 전송 순서가 보장되지 않을 채로 Consumer에서 읽혀질 수 있음
 - Key를 지정할 때
-    - 메세지 Key는 업무 로직이나 메세지 Produce/COnsume시 분산 성능 영향을 고려하여 생성
+    - 메세지 Key는 업무 로직이나 메세지 Produce/Consume시 분산 성능 영향을 고려하여 생성
     - 특정 Key값을 가지는 메세지는 특정 파티션으로 고정되어 전송된다.
 - Kafka는 하나의 파티션 내에서만 메세지의 순서 보장

@@ -1,3 +1,5 @@
+![Image](https://github.com/user-attachments/assets/44775098-769e-4d9c-9f2e-66d54322dc8f)
+
 # Kafka 설치 및 실행
 
 ## 1. Kafka 설치
