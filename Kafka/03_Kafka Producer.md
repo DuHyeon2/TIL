@@ -1,7 +1,6 @@
 ![Image](https://github.com/user-attachments/assets/44775098-769e-4d9c-9f2e-66d54322dc8f)
 
 # Kafka Producer
-- Topic에 메세지를 보내는 역할
 
 ## 1. Producer란
 - Topic에 메세지를 보내는 역할
@@ -23,7 +22,7 @@
             - 한 번 선택된 파티션을 일정 배치(batch.size)만큼 “고정(Sticky)” 사용  
             - 배치가 가득 차거나 타임아웃(`linger.ms`)이 지나면 다른 파티션으로 전환  
             - 대량 전송 시 네트워크 효율(배치 처리) 개선  
- 
+             
 
 ## 3. Key
 - Producer가 메세지를 보낼 때 Key를 지정할수도 하지 않을수도 있다.
