@@ -9,7 +9,6 @@
 
     $ sudo apt install openjdk-<자바 버전>-jdk
     ```
-    - java 11을 설치했음
 
 - Kafka 설치
     ```bash
