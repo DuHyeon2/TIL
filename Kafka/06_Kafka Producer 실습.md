@@ -20,8 +20,7 @@ dependencies {
 -  `slf4j-api` : 로깅 API
 -  `slf4j-simple` : SLF4J Simple 로깅 구현체
 
-## 2. SimpleProducer 설정
-
+## 2. 실습
 ```java
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
@@ -67,8 +66,42 @@ public class SimpleProducer {
 - `send` : Producer가 메세지를 전송하는 메소드
 - `close` : Producer 객체를 닫는 메소드
 
-### 결과
-``` bash
-$ ./kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic simple-topic --from-beginning
-hello world
-```
+- 결과
+    ``` bash
+    $ ./kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic simple-topic --from-beginning
+    hello world
+    ```
+## 3. Producer - Broker 동기화/비동기화
+- Producer가 메세지를 전송할 때 Broker와 동기화/비동기화 방식으로 전송할 수 있다.
+- 동기화 방식
+    - Producer가 메세지를 전송할 때 Broker로부터 응답(`Ack 메세지`)을 받을 때까지 대기하는 방식
+    - 메세지 전송 후 Broker로부터 응답을 받을 때까지 대기
+    - 메세지 전송 후 Broker로부터 응답을 받을 때까지 대기하기 때문에 메세지 전송 속도가 느려질 수 있다.
+    - 동기화 방식 예제
+        ```java
+        try {
+            /*
+            Future<RecordMetadata> future = kafkaProducer.send(producerRecord);
+            RecordMetadata recordMetadata = future.get();
+            */
+            RecordMetadata recordMetadata = kafkaProducer.send(producerRecord).get();
+            logger.info("Record sent to topic {} partition {} offset {}", recordMetadata.topic(), recordMetadata.partition(), recordMetadata.offset());
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } finally {
+            kafkaProducer.close();
+        }
+
+        ```
+        - `Future` : Producer가 메세지를 전송한 후 Broker로부터 응답(`Ack 메세지`)을 받을 때까지 대기하는 클래스
+        - `RecordMetadata` : Producer가 전송한 메세지의 메타데이터를 담고 있는 클래스
+        - `get()` : 메세지 전송 후 Broker로부터 응답을 받을 때까지 대기하는 메소드
+        - `RecordMetadata`를 통해 메세지가 전송된 Topic, Partition, Offset을 확인할 수 있다.
+
+
+- 비동기화 방식
+    - Producer가 메세지를 전송할 때 Broker로부터 응답(`Ack 메세지`)을 기다리지 않고 다음 메세지를 전송하는 방식
+    - 메세지 전송 후 Broker로부터 응답을 받을 때까지 대기하지 않기 때문에 메세지 전송 속도가 빠르다.
+    

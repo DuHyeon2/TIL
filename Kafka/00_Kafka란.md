@@ -27,3 +27,8 @@
 
 ## 5. Consumer
 - Topic에서 메세지를 읽어 들임
+- Topic에 메세지를 보내는 Producer와 반대의 역할
+
+## 6. Broker
+- Producer가 메세지를 보내고 Consumer가 메세지를 읽는 서버
+- Kafka Cluster를 구성하는 서버
