@@ -21,6 +21,7 @@ dependencies {
 -  `slf4j-simple` : SLF4J Simple 로깅 구현체
 
 ## 2. SimpleProducer 설정
+
 ```java
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
@@ -65,7 +66,9 @@ public class SimpleProducer {
 - `ProducerRecord` : Producer가 전송할 메세지 객체
 - `send` : Producer가 메세지를 전송하는 메소드
 - `close` : Producer 객체를 닫는 메소드
-- 결과
+
+### 결과
     ``` bash
     $ ./kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic simple-topic --from-beginning
+    hello world
     ```
