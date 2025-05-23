@@ -1,6 +1,6 @@
 ![Image](https://github.com/user-attachments/assets/44775098-769e-4d9c-9f2e-66d54322dc8f)
 
-# Kafka 기본 사용
+# Kafka Topic
 다음은 Kafka 브로커에서 토픽(topic)을 생성·조회·삭제·정보 확인하는 기본 명령어입니다.
 
 ## 1. 토픽 생성
