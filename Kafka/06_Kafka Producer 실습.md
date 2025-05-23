@@ -68,7 +68,7 @@ public class SimpleProducer {
 - `close` : Producer 객체를 닫는 메소드
 
 ### 결과
-    ``` bash
-    $ ./kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic simple-topic --from-beginning
-    hello world
-    ```
+``` bash
+$ ./kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic simple-topic --from-beginning
+hello world
+```
