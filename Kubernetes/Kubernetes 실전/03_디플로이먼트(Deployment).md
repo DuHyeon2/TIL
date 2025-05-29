@@ -9,7 +9,7 @@
 
 ## 1. 디플로이먼트 생성
 - yaml 파일 생성
-    ```
+    ```yaml
     # spring-deployment.yaml
     apiVersion: apps/v1 # 디플로이먼트를 생성하기 위한 apiVersion(apps/v1을 사용해야함)
     kind: Deployment
@@ -37,11 +37,11 @@
     ```
 
 - 디플로이먼트 생성
-    ```
+    ```bash
     $ kubectl apply -f spring-deployment.yaml
     ```
 
 - 디플로이먼트 재시작
-    ```
+    ```bash
     $ kubectl rollout restart deployment spring-deployment 
     ```

@@ -14,7 +14,7 @@
 - 이 방식은 파드가 삭제되는 것과 상관없이 데이터를 영구적으로 사용할 수 있다는 장점이 있다.
 - 현업에서 주로 사용
 - 작성법
-    ```
+    ```yaml
     # mysql-pv.yaml
     apiVersion: v1
     kind: PersistentVolume
@@ -35,7 +35,7 @@
 ## 3. 퍼시스던트 볼륨 클레임(Persistent Volume Claim, PVC)
 - 파드와 퍼시스던트 볼륨을 연결해주는 역할
 - 파드와 퍼시스던트 볼륨은 실제로 직접 연결할 수 없어서 퍼시스던트 볼륨 클레임이 필요함
-    ```
+    ```yaml
     # mysql-pvc.yaml
     apiVersion: v1
     kind: PersistentVolumeClaim
@@ -53,7 +53,7 @@
     ```
 
 ## 4. 디플로이먼트 파일 작성
-    ```
+    ```yaml
     # mysql-deployment.yaml
     apiVersion: apps/v1
     kind: Deployment

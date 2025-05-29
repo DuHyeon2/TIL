@@ -4,7 +4,7 @@
 
 ## 1. 시크릿 생성
 - yaml 파일 생성
-    ```
+    ```yaml
     # spring-secret.yaml
     apiVersion: v1
     kind: Secret
@@ -17,13 +17,13 @@
     ```
 
 - 시크릿 생성
-    ```
+    ```bash
     $ kubectl apply -f spring-secret.yaml
     ```
 
 ## 2. 디플로이먼트 내에 환경변수 사용
 - 디플로이먼트 yaml 파일 수정
-    ```
+    ```yaml
     # spring-deployment.yaml
     apiVersion: apps/v1 # 디플로이먼트를 생성하기 위한 apiVersion(apps/v1을 사용해야함)
     kind: Deployment
@@ -63,11 +63,11 @@
     ```
 
 - 디플로이먼트 수정 반영
-    ```
+    ```bash
     $ kubectl apply -f spring-deployment.yaml
     ```
 
 - 디플로이먼트 재시작
-    ```
+    ```bash
     $ kubectl rollout restart deployment spring-deployment
     ```

@@ -4,7 +4,7 @@
 
 ## 1. Dockerfile로 Docker image 생성
 - Dockerfile 생성
-    ```
+    ```yaml
     # Dockerfile
     FROM: openjdk:17-jdk
 
@@ -16,17 +16,17 @@
     ```
 
 - Docker image 빌드
-    ```
+    ```bash
     $ docker build -t spring-server(이미지이름) .
     ```
 - Docker image 생성됐는지 확인
-    ```
+    ```bash
     $ docker image ls
     ```
 
 ## 2. Pod 생성
 - yaml(매니페스트) 파일 생성
-    ```
+    ```yaml
     # spring-pad.yaml
     apiVersion: v1
     kind: pod
@@ -44,22 +44,22 @@
     ```
 
 - Pod 생성
-    ```
+    ```bash
     $ kubectl apply -f spring-pod.yaml  
     ```
 
 - Pod 생성 확인
-    ```
+    ```bash
     $ kubectl get pods
     ```
 
 - Pod 삭제
-    ```
+    ```bash
     $ kubectl delete pod spring-pod(파드이름)
     ```
 
 - Pod 디버깅
-    ```
+    ```bash
     $ kubectl describe pods spring-pod(파드이름)
 
     $ kubectl logs spring-pod(파드이름)

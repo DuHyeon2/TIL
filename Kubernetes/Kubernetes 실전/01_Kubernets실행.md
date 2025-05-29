@@ -4,7 +4,7 @@
 
 ## 1. pod생성
 - yaml 파일 생성
-    ```bash
+    ```yaml
     # nginx-pod.yaml
     apiVersion: v1 # Pod를 생성하기 위한 apiVersion(v1을 사용해야함)
     kind: Pod # Pod라는 리소스 생성
@@ -38,6 +38,6 @@
         $ sudo kubectl port-forward pod/nginx-pod(파드이름) 80(로컬 포트):80(파드 내 포트)
         ```
 - 종료
-    ```
+    ```bash
     $ kubectl delete pod nginx-pod(파드이름)
     ```

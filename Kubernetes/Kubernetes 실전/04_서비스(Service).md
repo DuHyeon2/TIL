@@ -8,7 +8,7 @@
 
 ## 1. 서비스 생성
 - yaml 파일 생성
-    ```
+    ```yaml
     # spring-service.yaml 
     apiVersion: v1
     kind: Service
