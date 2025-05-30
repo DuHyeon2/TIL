@@ -29,6 +29,6 @@
     ```
 
 - 서비스 생성
-    ```
+    ```bash
     $ kubectl apply -f spring-service.yaml
     ```
