@@ -19,7 +19,7 @@
 ## 2. Container
  - 실행환경을 독립적으로 운영할 수 있게 해주는 것
  - 커널레벨 기술 : chroot, cgroup, namespace
- - 도커는 High Lever 기반의 기술
+ - 도커는 High Level 기반의 기술
  - Container는 ContainerD를 사용해서 만들어짐
  - ContainerD는 Container runtime(container를 생성해줌)이다.
 

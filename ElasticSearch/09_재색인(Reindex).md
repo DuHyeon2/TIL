@@ -18,4 +18,3 @@ POST _reindex
   }
 }
 ```
-
