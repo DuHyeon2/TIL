@@ -1,14 +1,14 @@
 ![debezium](https://github.com/DuHyeon2/DailyStudy/assets/83499405/8272a82d-9b52-4af3-b912-45d7022c5f38)
 
 # Spring CDC(Change Data Capture)
-spring에서 실시간 알람 기능을 구현하던 도중 DB에 새로운 값이 들어오는걸 실시간으로 감지를 해야했다. <br>
-찾던 도중 데이터베이스에서 변경된 데이터를 캡쳐하는 CDC라는 것을 알게 되었다. <br>
-CDC란 Change Data Capture의 약자로 변경된 내용을 골라내는 패턴이다. <br>
+spring에서 실시간 알람 기능을 구현하던 도중 DB에 새로운 값이 들어오는걸 실시간으로 감지를 해야했다.
+찾던 도중 데이터베이스에서 변경된 데이터를 캡쳐하는 CDC라는 것을 알게 되었다.
+CDC란 Change Data Capture의 약자로 변경된 내용을 골라내는 패턴이다.
 
 
 ## 1. Debezium
-- Debezium은 Kafka기반의 변경된 데이터 캡쳐를 위한 오픈 소스 분산 플랫폼이다.  <br>
-- 데이터가 변경되면 Debezium은 변경된 데이터를 캡쳐 해 Kafka에 전달한다. <br>
+- Debezium은 Kafka기반의 변경된 데이터 캡쳐를 위한 오픈 소스 분산 플랫폼이다.
+- 데이터가 변경되면 Debezium은 변경된 데이터를 캡쳐 해 Kafka에 전달한다.
 
 ## 2. Embedded Debezium 설정하기(Spring)
 - pom.xml 설정
@@ -148,9 +148,9 @@ SHOW wal_level;
 ```
 ![image](https://github.com/DuHyeon2/DailyStudy/assets/83499405/a7451684-60cc-4886-a8c4-872bbec8b2b5)
 
-- wal_level은 PostgreSQL에서 WAL에 기록되는 정보의 양을 결정하는데, replica와 logical, minimal 이 있다. <br>
-- **replica**는 물리적 디코딩을 지원하는 데 필요한 정보만 제공 <br>
-- **logical**은 논리적 디코딩을 지원하는 데 필요한 정보를 추가 <br>
-- **minimal**은 복구하기위해 필요한 정보만 기록 <br>
-- 본인은 PostgreSQL을 사용했는데 wal level 이 replica였는데 Debezium은 wal_level이 logical이여야만 지원을 해 준다. <br>
+- wal_level은 PostgreSQL에서 WAL에 기록되는 정보의 양을 결정하는데, replica와 logical, minimal 이 있다. 
+- **replica**는 물리적 디코딩을 지원하는 데 필요한 정보만 제공 
+- **logical**은 논리적 디코딩을 지원하는 데 필요한 정보를 추가 
+- **minimal**은 복구하기위해 필요한 정보만 기록 
+- 본인은 PostgreSQL을 사용했는데 wal level 이 replica였는데 Debezium은 wal_level이 logical이여야만 지원을 해 준다. 
 

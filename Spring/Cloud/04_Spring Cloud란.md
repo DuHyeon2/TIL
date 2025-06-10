@@ -8,10 +8,12 @@
     - Eureka, Consul, Zookeeper 등을 사용하여 서비스 인스턴스를 등록하고 검색
     - 서버
         ```java
+        @SpringBootApplication
         @EnableEurekaServer
         ```
     - 클라이언트
         ```java
+        @SpringBootApplication
         @EnableEurekaClient
         ```
 - **로드 밸런싱**
@@ -22,5 +24,13 @@
     - Eureka 같은 디스커버리 서버에 자신을 등록하고, 다른 서비스도 탐색할 수 있도록 함
 - **API 게이트웨이**
     - 마이크로서비스 진입점
+    - 클라이언트(사용자) 요청을 적절한 서비스로 라우팅
     - 인증, 라우팅, 로깅, 속도 제한 등의 기능을 제공
     - Spring Cloud Gateway, Zuul 등을 사용하여 API 게이트웨이 구현
+- **Netflix Ribbon**
+    - 클라이언트(서비스 자체) 측 로드 밸런싱 라이브러리
+    - 서비스 인스턴스의 목록을 가져와서 요청을 분산
+    - 현재는 Spring Cloud LoadBalancer로 대체 가능
+- **Netflix Zuul**
+    - API 게이트웨이로 사용되는 라이브러리
+    - 클라이언트(사용자) 요청을 적절한 서비스로 라우팅하고, 필터링, 로깅 등의 기능 제공
