@@ -27,8 +27,8 @@
         capacity:
             storage: 1Gi # 용량
         accessModes:
-            - ReadWriteOnce # 읽기와 쓰기가 가능
-        hostPath: 
+            - ReadWriteOnce # 읽기와 쓰기가 가능 
+        hostPath: # 쿠버네티스 내부의 공간을 볼륨으로 사용할 때 hostPath를 사용
             path: "/Users/gimduhyeon/Documents/dev/study/kube/mysql-project/data" # 쿠버네티스가 사용할 경로(내 실제 경로를 사용해야함)
     ```
 
@@ -76,23 +76,23 @@
             - name: mysql-container
                 image: mysql
                 ports:
-                - containerPort: 3306
+                    - containerPort: 3306
                 env:
-                - name: MYSQL_ROOT_PASSWORD
-                    valueFrom: 
-                    secretKeyRef:
-                        name: mysql-secret
-                        key: mysql-root-password
-                - name: MYSQL_DATABASE
-                    valueFrom:
-                    configMapKeyRef:
-                        name: mysql-config
-                        key: mysql-database
+                    - name: MYSQL_ROOT_PASSWORD
+                      valueFrom: 
+                        secretKeyRef:
+                            name: mysql-secret
+                            key: mysql-root-password
+                    - name: MYSQL_DATABASE
+                      valueFrom:
+                        configMapKeyRef:
+                            name: mysql-config
+                            key: mysql-database
                 volumeMounts:
                 - name: mysql-persistent-storage
-                    mountPath: /var/lib/mysql # mysql의 데이터가 저장되는 경로
+                  mountPath: /var/lib/mysql # mysql의 데이터가 저장되는 경로
         volumes:
             - name: mysql-persistent-storage
-                persistentVolumeClaim:
-                claimName: mysql-pvc # pvc이름
+              persistentVolumeClaim:
+              claimName: mysql-pvc # pvc이름
     ```

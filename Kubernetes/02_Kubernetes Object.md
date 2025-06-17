@@ -29,4 +29,22 @@
   - YAML 파일로 정의 가능
   - docker-registry: 도커 레지스트리 인증 정보를 저장하는 데 사용
   - tls: TLS 인증서를 저장하는 데 사용
-  
+
+## 5. Persistent Volume, Persistent Volume Claim
+- Persistent Volume(PV): 클러스터 내에서 데이터를 저장하는 볼륨
+  - local : 로컬 디스크를 사용하는 볼륨
+  - hostPath: 호스트 머신의 디렉토리를 사용하는 볼륨
+- Persistent Volume Claim(PVC): 사용자가 PV에 대한 요청을 도와주는 오브젝트
+
+## 6. Deployment
+- 애플리케이션의 배포 및 관리를 위한 오브젝트
+- Recreate : 기존 파드를 삭제하고 새로운 파드를 생성
+- RollingUpdate : 기존 파드를 점진적으로 업데이트하여 새로운 버전의 애플리케이션을 배포
+  - maxUnavailable: 업데이트 중에 사용할 수 없는 파드의 최대 수를 지정
+- maxSurge: 업데이트 중에 추가로 생성할 수 있는 파드의 최대 수를 지정
+- replicas: 파드의 복제본 수를 지정
+
+## 7. Service
+- 외부에서 Pod에 접근할 수 있도록 하는 오브젝트
+- ClusterIP: 클러스터 내부에서만 접근 가능한 서비스
+- NodePort: 클러스터 외부에서 접근 가능한 서비스
