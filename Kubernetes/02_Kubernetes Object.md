@@ -1,8 +1,12 @@
 ![Kubernetes](https://github.com/user-attachments/assets/3ec2d35d-184a-480a-878f-1f89f9547880)
 
-# Kubernets Object
+# Kubernets Object/Controller
 - Kubernetes 오브젝트는 Kubernetes 클러스터에서 실행되는 애플리케이션의 상태를 정의하는 API 객체
 - Kubernetes 오브젝트는 클러스터의 상태를 선언적으로 정의하고, Kubernetes가 이를 관리하도록 함
+- Object는 하나의 인프라 개념으로 단독 기능을 함
+  - Pod, Service, ConfigMap, Secret 등
+- Controller는 Object를 관리하는 기능을 함
+  - Deployment, HPA 등
 
 ## 1. labels
 - Kubernetes 오브젝트에 대한 메타데이터로, 오브젝트를 식별하고 그룹화하는 데 사용
@@ -48,3 +52,9 @@
 - 외부에서 Pod에 접근할 수 있도록 하는 오브젝트
 - ClusterIP: 클러스터 내부에서만 접근 가능한 서비스
 - NodePort: 클러스터 외부에서 접근 가능한 서비스
+- port: 쿠버네티스 내부에서 Service에 접근하기 위한 포트 번호
+- targetPort: 매핑을 위한 Pod의 포트 번호
+- 서비스 디스커버리: 서비스 이름을 사용하여 Pod에 접근할 수 있도록 함
+
+## 8. HPA(Horizontal Pod Autoscaler)
+- 애플리케이션의 부하에 따라 Pod의 수를 자동으로 조정하는 오브젝트
