@@ -20,13 +20,13 @@
     spec: 
         replicas: 3 # 파드생성 개수
         selector: # 파드에 대한 정보를 
-            matchLabels: # 아래 카테고리와 매치시킨다
-            app: backend-app # 'backend-app' 에 매칭!
+            matchLabels: # 아래 카테고리와 매치시킨다(backend-app 라벨이 붙어있는 파드를 바라보겠다는 의미)
+                app: backend-app # 'backend-app' 에 매칭!
 
         template: # 파드에 대한 정보
             metadata: # 파드에 대한 기본 정보
             labels: # 파드의 카테고리
-                app: backend-app # 'backend-app'이라는 이름
+                app: backend-app # 'backend-app'이라는 라벨을 붙인다
             spec:
             containers: 
                 - name: spring-container
