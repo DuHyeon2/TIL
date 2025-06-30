@@ -11,10 +11,10 @@
 POST _reindex
 {
   "source": {
-    "index": "source_index"  # 기존 인덱스 이름
+    "index": "item-v1"  # 기존 인덱스 이름
   },
   "dest": {
-    "index": "destination_index"  # 새로 생성할 인덱스 이름
+    "index": "item-v2"  # 새로 생성할 인덱스 이름
   }
 }
 ```
