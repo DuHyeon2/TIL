@@ -23,8 +23,15 @@
 - 프리티어 선택
 - 이후 비밀번호 지정 후 생성
 - 이후 생성되면 퍼블릭 액세스 가능 "예" 로 수정
-- 인바운드 규칙 편집 포트 범위 3306 허용
+- 보안그룹 -> 인바운드 규칙 편집 포트 범위 3306 허용
 
 ## 4. ECR 생성(Docker hub 느낌)
 - 레포지토리 생성 클릭
 - order-backend 레포지토리 이름으로 생성
+- 이후 레포지토리 생성 후 ECR로 접속
+    ```
+    $ aws ecr get-login-password --region ap-northeast-2 | docker login --username AWS --password-stdin <ecr-url>
+    ```
+
+## 추가작업
+1. https 설정
