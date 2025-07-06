@@ -2,10 +2,12 @@
 
 ## 0. route53 생성
 - route53으로 dns 생성 및 등록
+- 가비아에서 구매하면 가비아에 route53 등록 해야함
 
 ## 1. eks 생성
 - eks에서 my-cluster 생성
 - 노드그룹 my-nodes 생성
+- 이름은 내 맘대로 
 
 ## 2. ingress 로드밸런서 생성
 - ingress-controller설치
@@ -35,3 +37,5 @@
 
 ## 추가작업
 1. https 설정
+    - 쿠버네티스로 쉽게 설정할 수 있게 소스가 이미 있음
+    - 그거 설치하면 된다 ㄱㄱ
