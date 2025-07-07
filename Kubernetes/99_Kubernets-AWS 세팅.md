@@ -6,6 +6,14 @@
 ## 1. eks 생성
 - eks에서 my-cluster 생성
 - 노드그룹 my-nodes 생성
+- 이후 aws cli 다운로드 후 명령어, 엑세스키, 시크릿키 입력
+    ```
+    $ aws configure
+    ```
+- kubectl 로컬 세팅
+    ```
+    $ aws eks update-kubeconfig --region ap-northeast-2 --name my-cluster
+    ```
 
 ## 2. ingress 로드밸런서 생성
 - ingress-controller설치
@@ -19,18 +27,18 @@
 
 ## 3. RDS 생성
 - 손쉬운 생성 클릭
-- mysql 설치
+- db 종류 선택
 - 프리티어 선택
 - 이후 비밀번호 지정 후 생성
 - 이후 생성되면 퍼블릭 액세스 가능 "예" 로 수정
-- 보안그룹 -> 인바운드 규칙 편집 포트 범위 3306 허용
+- 보안그룹 -> 인바운드 규칙 편집 포트 범위 3306 허용(MySQL 기본 포트)
 
 ## 4. ECR 생성(Docker hub 느낌)
 - 레포지토리 생성 클릭
 - order-backend 레포지토리 이름으로 생성
 - 이후 레포지토리 생성 후 ECR로 접속
     ```
-    $ aws ecr get-login-password --region ap-northeast-2 | docker login --username AWS --password-stdin <ecr-url>
+    $ aws ecr get-login-password --region ap-northeast-2 | docker login --username AWS --password-stdin <ecr-uri>
     ```
 
 ## 추가작업
