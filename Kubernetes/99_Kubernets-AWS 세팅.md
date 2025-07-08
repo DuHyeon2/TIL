@@ -37,4 +37,8 @@
 ## 추가작업
 1. https 설정
     - 쿠버네티스로 쉽게 설정할 수 있게 소스가 이미 있음
-    - 그거 설치하면 된다 ㄱㄱ
+    ```
+    $ kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.5.0/cert-manager.crds.yaml
+
+    $ kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.5.0/cert-manager.yaml
+    ```
