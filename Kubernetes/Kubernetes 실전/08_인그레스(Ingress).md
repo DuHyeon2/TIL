@@ -8,4 +8,4 @@
 - Ingress-Controller 설치 시 자동으로 AWS LoadBalancer가 생성됨
 - 정리하자면 LoadBalancer가 Ingress-Controller로 요청을 하면 url 패턴을 분석하여 해당하는 서비스로 요청을 전달하는 구조
 
-## 1. Ingress 리소스 생성 
+## 1. Ingress Controller 설치
