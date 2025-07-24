@@ -7,7 +7,20 @@
 ## 1. eks 생성
 - eks에서 my-cluster 생성
 - 노드그룹 my-nodes 생성
-- 이후 eksctl을 통해 kubectl 설정
+- 이후 eksctl을 통해 kubectl 설정(windows)
+    - aws cli 로컬 세팅
+    ```bash
+    $ aws configure
+
+    # 이후 발급받은 키 입력
+    ```
+
+    - kubectl 설치
+    ```
+    $ winget install -e --id Kubernetes.kubectl
+    ```
+
+    - kube config 세팅
     ```bash
     $ aws eks update-kubeconfig --region ap-northeast-2 --name my-cluster
     ```
