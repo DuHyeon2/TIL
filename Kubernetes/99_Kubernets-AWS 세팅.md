@@ -9,6 +9,13 @@
 - 노드그룹 my-nodes 생성
 - 이후 eksctl을 통해 kubectl 설정(windows)
     - aws cli 로컬 세팅
+    ```bash 
+    $ aws --version
+
+    # 버전이 나오지 않는다면 설치
+    $ msiexec.exe /i https://awscli.amazonaws.com/AWSCLIV2.msi
+    ```
+
     ```bash
     $ aws configure
 
@@ -16,7 +23,7 @@
     ```
 
     - kubectl 설치
-    ```
+    ```bash
     $ winget install -e --id Kubernetes.kubectl
     ```
 
