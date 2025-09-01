@@ -44,3 +44,8 @@ $ kafka-console-producer --bootstrap-server localhost:9092 --topic <토픽명> -
 
 - `--property parse.key=true`
     - 입력값 앞부분을 Key로 파싱
+
+
+    ![alt text](image.png)
+
+    ![alt text](image-1.png)
