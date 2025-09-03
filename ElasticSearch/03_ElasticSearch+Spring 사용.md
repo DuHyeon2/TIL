@@ -7,7 +7,7 @@
     ```yml
     spring:
         elasticsearch:
-            uris: indie7942.store:9210
+            uris: <uri>
 
     logging:
         level:
