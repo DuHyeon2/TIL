@@ -1,0 +1,28 @@
+services:
+  mlflow:
+    image: ghcr.io/mlflow/mlflow:latest
+    container_name: mlflow
+    ports:
+      - "5001:5000"
+    volumes:
+      - ./mlruns:/mlflow/mlruns
+    environment:
+      - GIT_PYTHON_REFRESH=quiet
+      - MLFLOW_TRACKING_URI=http://0.0.0.0:5000
+      - BACKEND_STORE_URI=mysql+pymysql://root:rootpassword@db/mlflow
+    command: >
+      /bin/sh -c "pip install pymysql cryptography &&
+                  exec mlflow server --backend-store-uri mysql+pymysql://root:rootpassword@db/mlflow --default-artifact-root /mlflow/mlruns --host 0.0.0.0 --port 5000"
+    depends_on:
+      - db
+    
+  db:
+    image: mysql:8.0
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: mlflow
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./db_data:/var/lib/mysql
