@@ -32,6 +32,12 @@
     $ aws eks update-kubeconfig --region ap-northeast-2 --name my-cluster
     ```
 
+    - kube context 확인 및 변경
+    ```bash
+    $ kubectl config get-contexts
+    $ kubectl config use-context <context name>
+    ```
+
 ## 2. ingress 로드밸런서 생성
 - ingress-controller설치
     ```bash
