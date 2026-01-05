@@ -59,3 +59,5 @@
 - 해당 Jenkins에 등록된 Repository 이동
 - Settings - Webhooks - Add webhook 클릭
     ![alt text](<GitHub webhook 설정.png>)
+
+## 7. 
